@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>RevitViewPlace — листы КМД по эталонам · NORDFOX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="pilot-banner">Пилот · Revit 2021/2022 · проект R22 (вар 3) · сентябрь 2026</div>
+    <nav class="site-nav">
+      <div class="wrap site-nav-inner">
+        <a class="site-brand" href="#top">RevitViewPlace</a>
+        <div class="site-nav-links">
+          <a href="#outcome">Эффект</a>
+          <a href="#what">Возможности</a>
+          <a href="#replace">Replace</a>
+          <a href="#scale">Масштаб</a>
+          <a href="#planes">Плоскости</a>
+          <a href="#demo">Демо</a>
+          <a href="#status">Статус</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow">Плагин Autodesk Revit · <a href="https://nordfox.ru/" style="color:#fff;opacity:.9">NORDFOX</a></p>
+      <h1>Листы КМД по эталонам</h1>
+      <p class="lead">По выбранному модулю на фасаде — лист модуля, лист панели, листы профилей. Раскладка и шаблоны видов как в эталонных чертежах офиса.</p>
+      <p><span class="status-pill">Пилот принят</span> — проверены типовой, угловой, горизонтальный, парапетный, узкий и внутренний угловой модули.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-label">Комплектов по типам</span>
+          <em>~108</em>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Вручную, 1 комплект</span>
+          <em>60–90 мин</em>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Плагином, 1 комплект</span>
+          <em>10–15 мин</em>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Экземпляров на фасадах</span>
+          <em>656</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="outcome">
+    <div class="wrap">
+      <h2>Эффект по времени</h2>
+      <p class="lead-section">Считаем <strong>108 комплектов</strong> — по одному эталону на каждый тип модуля (Family + Type). Экземпляры с одинаковым типом (например, М-1 × 50) повторяют уже отработанный комплект; в сравнении «ручная разработка vs плагин» участвуют типы, а не 656 отдельных разработок.</p>
+
+      <div class="outcome-strip">
+        <p><strong>Один комплект</strong> = лист модуля + лист панели + листы профилей + цепочки размеров + при необходимости смена ориентации видов (без пересоздания листа).</p>
+
+        <table class="kit-breakdown">
+          <thead>
+            <tr><th>Этап комплекта</th><th>Вручную</th><th>Плагин</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Лист модуля (виды, разрезы, рама)</td><td>25–35 мин</td><td>3–5 мин</td></tr>
+            <tr><td>Лист панели</td><td>20–30 мин</td><td>2–4 мин</td></tr>
+            <tr><td>Листы профилей (стойки + ригели)</td><td>15–25 мин</td><td>3–5 мин</td></tr>
+            <tr><td>Цепочки размеров на видах</td><td>10–15 мин</td><td>1–2 мин</td></tr>
+            <tr><td>Смена ориентации вида (другой фасад)</td><td>15–20 мин*</td><td>1–2 мин</td></tr>
+            <tr><td><strong>Итого на комплект</strong></td><td><strong>60–90 мин</strong></td><td><strong>10–15 мин</strong></td></tr>
+          </tbody>
+        </table>
+        <p style="color: var(--muted); margin: 12px 0 0; font-size: 0.88rem;">* Без плагина: снова выбор модуля, разрезы, скрытие деталей или пересборка вида. Команда «Ориентация видов» крутит уже созданный вид — лист не пересоздаётся.</p>
+
+        <div class="outcome-compare" style="margin-top: 28px;">
+          <div class="outcome-side">
+            <span>108 комплектов вручную</span>
+            <strong>108–162 ч</strong>
+          </div>
+          <span class="outcome-arrow">→</span>
+          <div class="outcome-side outcome-side-accent">
+            <span>108 комплектов плагином</span>
+            <strong>18–27 ч</strong>
+          </div>
+        </div>
+        <p style="color: var(--muted); margin: 0;">Ориентир «~5–6× быстрее» на полный комплект. Точный замер — по прогонам на R22.</p>
+      </div>
+
+      <h3 style="margin-top: 36px; font-weight: 300;">Сравнение по проекту R22</h3>
+      <div class="chart-bars">
+        <div class="bar-row">
+          <span>108 типов</span>
+          <div class="bar-track"><div class="bar-fill bar-manual" style="width: 100%">вручную 108–162 ч</div></div>
+          <span>108–162 ч</span>
+        </div>
+        <div class="bar-row">
+          <span>108 типов</span>
+          <div class="bar-track"><div class="bar-fill bar-plugin" style="width: 17%">плагин 18–27 ч</div></div>
+          <span>18–27 ч</span>
+        </div>
+      </div>
+
+      <details>
+        <summary>Зачем в статистике 656 экземпляров?</summary>
+        <p>656 — масштаб <strong>монтажа</strong> на фасадах: столько раз модуль стоит на здании. Для КМД разрабатываем <strong>108 эталонов</strong> по типам. После первого комплекта на тип остальные экземпляры того же типа получают листы быстрее (Replace / повторный прогон), но в «полную ручную разработку» их не умножаем.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="what">
+    <div class="wrap">
+      <h2>Возможности плагина</h2>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Лист модуля (В9 / В20)</h3>
+          <ul>
+            <li>Фасад, разрезы по стойкам и ригелям, рама, изометрия</li>
+            <li>Плоский и угловой сценарий</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Лист панели (В10 / В21)</h3>
+          <ul>
+            <li>Виды оболочки спереди и сзади, разрезы</li>
+            <li>Отдельный сценарий — не затирает лист модуля</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Листы профилей (В11–В12 / В22–В25)</h3>
+          <ul>
+            <li>Изоляция стоек и ригелей, crop по эталону</li>
+            <li>Угловые — фиксированные пресеты по AnalyzeSheet</li>
+          </ul>
+        </article>
+        <article class="card card-highlight">
+          <h3>Цепочки размеров</h3>
+          <ul>
+            <li>Отдельная команда на ленте — база → центры деталей по стороне вида</li>
+            <li>Не блокирует выпуск листов; ускоряет финальную простановку</li>
+          </ul>
+        </article>
+        <article class="card card-highlight">
+          <h3>Ориентация видов</h3>
+          <ul>
+            <li>Поворот одного вида (90° / 180°) без Replace всего листа</li>
+            <li>Экономит повторный выбор модуля, разрезы и скрытие деталей на другом фасаде</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="replace">
+    <div class="wrap">
+      <h2>Replace и привязка к модулю</h2>
+      <p class="lead-section">Листы привязаны к <strong>конкретному экземпляру</strong> модуля на фасаде (ModuleId), а не к типу «М-1» в целом.</p>
+
+      <div class="callout">
+        <h4>Если вы изменили модуль М-1 на втором фасаде — обновятся ли все М-1?</h4>
+        <p><strong>Нет.</strong> Комплект листов живёт у того экземпляра, для которого вы его создали. Другие 49 экземпляров М-1 на проекте <strong>не обновятся автоматически</strong> — у каждого свой ModuleId и свой набор листов (или его отсутствие).</p>
+        <p><strong>Replace</strong> пересоздаёт комплект только у <strong>выбранного</strong> экземпляра. Это не «массовая замена всех М-1».</p>
+        <p>Одинаковый тип (М-1) означает одинаковую <em>схему</em> работы: отработали эталон на одном экземпляре — на остальных прогон быстрее, но команда всё равно привязана к выбранному модулю на фасаде.</p>
+      </div>
+
+      <div class="grid-3" style="margin-top: 24px;">
+        <article class="card">
+          <h3>Привязка</h3>
+          <p style="color: var(--muted); margin: 0;">Лист ↔ экземпляр модуля (ModuleId). В метаданных вида и листа хранится связь с выбранным элементом.</p>
+        </article>
+        <article class="card">
+          <h3>Создание</h3>
+          <p style="color: var(--muted); margin: 0;">Выбираете модуль на фасаде → сценарий → лист. Повтор для того же экземпляра — вопрос «заменить или создать новый».</p>
+        </article>
+        <article class="card">
+          <h3>Replace</h3>
+          <p style="color: var(--muted); margin: 0;">Удаляет старые виды/лист у <strong>этого</strong> экземпляра и собирает комплект заново. Соседние модули того же типа не затрагивает.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="scale">
+    <div class="wrap">
+      <h2>Масштаб проекта R22 (вар 3)</h2>
+      <p>Данные команды <strong>Analyze Project</strong>, 02.09.2026.</p>
+      <div class="plane-diagram">
+        <table>
+          <thead>
+            <tr><th>Показатель</th><th>Значение</th><th>Пояснение</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Экземпляров модулей</td><td>656</td><td>С nested-панелью на всех фасадах</td></tr>
+            <tr><td>Типов (Family + Type)</td><td>~108</td><td>Столько эталонных комплектов КМД</td></tr>
+            <tr><td>Пример М-1</td><td>50 шт.</td><td>1 комплект × 50 экземпляров</td></tr>
+            <tr><td>Пример М-5 (угол)</td><td>10 шт.</td><td>1 комплект × 10 экземпляров</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="planes">
+    <div class="wrap">
+      <h2>Опорные плоскости — почему так</h2>
+      <p>Одно семейство профиля для стойки и ригеля. Revit не может дать разные «роли» одному имени на разных экземплярах — поэтому разделение по уровню модели и ориентации.</p>
+      <div class="plane-diagram" style="margin-top: 16px;">
+        <table>
+          <thead>
+            <tr><th>Плоскость</th><th>Где</th><th>Смысл</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>profil vertikalnyi centr</code></td>
+              <td>профиль (nested)</td>
+              <td>Вертикальная режущая плоскость → <strong>стойка</strong>, если нормаль согласована с шириной модуля</td>
+            </tr>
+            <tr>
+              <td><code>profil gorizontalnyi centr</code></td>
+              <td>рама / модуль</td>
+              <td>Уровень ригеля → высота разреза + поиск FI ригеля</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <details style="margin-top: 16px;">
+        <summary>Одно семейство профиля vs два (для спецификации)</summary>
+        <p><strong>Одно семейство</strong> — в ведомости одна строка на тип сечения (H20, H21…). Роль стойка/ригель определяет плагин при выпуске листов.</p>
+        <p><strong>Два семейства</strong> — спецификация не «ломается», но дублирует учёт одного проката и усложняет контроль: не видно, куда исполнитель поставил деталь, до выпуска чертежей. Скорость выгрузки профилей <strong>не зависит</strong> от числа семейств.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section" id="demo">
+    <div class="wrap">
+      <h2>Демонстрация</h2>
+      <div class="grid-2">
+        <div class="screenshot-placeholder">
+          Скриншот: эталон vs результат<br />
+          (М-1 лист модуля — вставьте images/etalon-m1.png)
+        </div>
+        <div class="screenshot-placeholder">
+          Скриншот: лист профилей<br />
+          (images/result-profiles.png)
+        </div>
+      </div>
+      <p style="margin-top: 16px; color: var(--muted);">Видео: укажите ссылку Яндекс.Диск в <code>video-config.js</code></p>
+      <div id="video-slot"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="status">
+    <div class="wrap">
+      <h2>Статус пилота</h2>
+      <div class="card">
+        <p><span class="status-pill">Принято</span></p>
+        <ul>
+          <li>Типовой flat (М-1, М-2…)</li>
+          <li>Угловой наружный (М-5…)</li>
+          <li>Внутренний угол (ПВ-4, ПВ-5…)</li>
+          <li>Горизонтальный (П-1…)</li>
+          <li>Парапет (МП-*, МПБ-*)</li>
+          <li>Узкий (ПВ-1)</li>
+        </ul>
+        <p style="margin-top: 12px; color: var(--muted);">Доработки — точечно по обратной связи при выпуске. Пакетного режима «все модули одной кнопкой» пока нет.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>RevitViewPlace · <a href="https://nordfox.ru/">NORDFOX</a> · внутренний инструмент КМД</p>
+      <p style="margin-top: 8px; opacity: 0.85;">Документация: <code>docs/PLAN_SHEETS_FOR_MANAGEMENT.txt</code></p>
+    </div>
+  </footer>
+
+  <script src="video-config.js"></script>
+  <script>
+    (function () {
+      var cfg = window.REVITVIEWPLACE_DEMO_VIDEO || {};
+      var slot = document.getElementById('video-slot');
+      if (!slot) return;
+      if (cfg.iframeSrc) {
+        var iframe = document.createElement('iframe');
+        iframe.src = cfg.iframeSrc;
+        iframe.title = cfg.title || 'Демо';
+        iframe.style.cssText = 'width:100%;max-width:720px;aspect-ratio:16/9;border:0;margin-top:12px';
+        slot.appendChild(iframe);
+      } else if (cfg.openUrl) {
+        var a = document.createElement('a');
+        a.href = cfg.openUrl;
+        a.textContent = 'Смотреть демо на Яндекс.Диске';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.style.cssText = 'display:inline-block;margin-top:12px;color:#4c70b5;font-weight:500';
+        slot.appendChild(a);
+      }
+    })();
+  </script>
+</body>
+</html>
