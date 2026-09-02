@@ -1,25 +1,19 @@
-# RevitViewPlace — презентация для руководства
+# Презентация RevitViewPlace
 
-Статический сайт для NORDFOX: эффект плагина RevitViewPlace, масштаб проекта R22, пилот, плоскости профилей.
+Статический сайт для руководства NORDFOX (без блока стоимости).
 
 ## Сайт
 
 **https://alexpror.github.io/revit_view_place_demo/**
 
-После push в `main` GitHub Actions публикует Pages автоматически (1–2 мин).
+Репозиторий: [AlexPror/revit_view_place_demo](https://github.com/AlexPror/revit_view_place_demo)
 
-### Первый запуск (один раз)
-
-Если сайт не открывается — в репозитории:
-
-1. **Settings → Pages**
-2. **Build and deployment → Source:** выберите **GitHub Actions**
-3. **Actions → Deploy Pages → Re-run all jobs**
-
+Если сайт не открывается: в репозитории **Settings → Pages → Source: GitHub Actions**, затем перезапустите workflow Deploy Pages.
 
 ## Локальный просмотр
 
 ```powershell
+cd presentation
 python -m http.server 8080
 ```
 
@@ -27,18 +21,21 @@ python -m http.server 8080
 
 ## Содержание
 
-- Эффект по времени: **108 комплектов** (листы + размеры + ориентация видов)
-- Масштаб R22: 656 экз. монтажа, ~108 типов КМД
-- Replace: привязка к экземпляру модуля (ModuleId), не к типу
+- Эффект по времени: **108 комплектов** (листы, размеры, ориентация видов)
+- Масштаб R22: ~108 типов КМД
 - Плоскости профилей и одно семейство vs два
 - Статус пилота (принят)
 - Стили — палитра [nordfox.ru](https://nordfox.ru/)
 
-## Скриншоты и видео
+## Скриншоты
 
-- Скрины: папка `images/`, затем `<img src="images/...">` в `index.html`
-- Видео: `openUrl` или `iframeSrc` в `video-config.js`
+Положите файлы в `presentation/images/` и замените блоки `.screenshot-placeholder` в `index.html` на `<img src="images/...">`.
 
-## Исходный код плагина
+## Видео
 
-Приватный репозиторий: [revit_view_place](https://github.com/AlexPror/revit_view_place)
+В `video-config.js` укажите `openUrl` или `iframeSrc` (Яндекс.Диск).
+
+## Связанные документы
+
+- `docs/PLAN_POST_RAIL_AND_LANDING.md`
+- `docs/PLAN_SHEETS_FOR_MANAGEMENT.txt`
