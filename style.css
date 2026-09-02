@@ -258,3 +258,90 @@ footer code { color: #e9ecef; }
   .hero h1 { font-size: 1.75rem; }
   .outcome-side strong { font-size: 1.5rem; }
 }
+
+/* —— Демонстрация (видео) —— */
+.demo-list { display: flex; flex-direction: column; gap: 28px; margin-top: 8px; }
+.demo-block {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 24px 28px;
+}
+.demo-block-head {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.demo-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nf-blue);
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.demo-block h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+.demo-block-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.video-embed {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.video-native {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+.video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 200px;
+  max-width: 800px;
+  background: var(--bg);
+  border: 2px dashed var(--line);
+  color: var(--muted);
+  text-align: center;
+  padding: 32px 24px;
+}
+.video-placeholder-icon {
+  font-size: 2rem;
+  color: var(--nf-gray);
+  line-height: 1;
+}
+.video-placeholder a {
+  color: var(--nf-blue);
+  font-weight: 500;
+}
+.video-fallback {
+  margin: 10px 0 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.video-fallback a { color: var(--nf-blue); }

@@ -19,7 +19,7 @@
           <a href="#what">Возможности</a>
           <a href="#scale">Масштаб</a>
           <a href="#planes">Плоскости</a>
-          <a href="#demo">Примеры</a>
+          <a href="#demo">Демонстрация</a>
           <a href="#status">Статус</a>
         </div>
       </div>
@@ -203,19 +203,43 @@
 
   <section class="section section-alt" id="demo">
     <div class="wrap">
-      <h2>Примеры</h2>
-      <div class="grid-2">
-        <div class="screenshot-placeholder">
-          Эталон и результат<br />
-          (лист модуля М-1)
-        </div>
-        <div class="screenshot-placeholder">
-          Лист профилей<br />
-          (стойки и ригели)
-        </div>
+      <h2>Демонстрация</h2>
+      <p class="lead-section">Три коротких ролика по основным операциям. Каждый — отдельный блок: можно смотреть по порядку или перейти к нужному.</p>
+
+      <div class="demo-list">
+        <article class="demo-block" id="demo-views">
+          <div class="demo-block-head">
+            <span class="demo-num">1</span>
+            <div>
+              <h3>Выпуск видов и листов</h3>
+              <p>Модуль на фасаде → лист модуля, панели и профилей по эталону.</p>
+            </div>
+          </div>
+          <div class="video-mount" data-video-id="views"></div>
+        </article>
+
+        <article class="demo-block" id="demo-dimensions">
+          <div class="demo-block-head">
+            <span class="demo-num">2</span>
+            <div>
+              <h3>Цепочки размеров</h3>
+              <p>Размеры от базовой линии до центров деталей на виде модуля.</p>
+            </div>
+          </div>
+          <div class="video-mount" data-video-id="dimensions"></div>
+        </article>
+
+        <article class="demo-block" id="demo-orientation">
+          <div class="demo-block-head">
+            <span class="demo-num">3</span>
+            <div>
+              <h3>Смена ориентации вида</h3>
+              <p>Поворот вида на другой фасад без пересборки листа.</p>
+            </div>
+          </div>
+          <div class="video-mount" data-video-id="orientation"></div>
+        </article>
       </div>
-      <p style="margin-top: 16px; color: var(--muted);">Видеодемонстрация — по ссылке ниже</p>
-      <div id="video-slot"></div>
     </div>
   </section>
 
@@ -244,27 +268,6 @@
   </footer>
 
   <script src="video-config.js"></script>
-  <script>
-    (function () {
-      var cfg = window.REVITVIEWPLACE_DEMO_VIDEO || {};
-      var slot = document.getElementById('video-slot');
-      if (!slot) return;
-      if (cfg.iframeSrc) {
-        var iframe = document.createElement('iframe');
-        iframe.src = cfg.iframeSrc;
-        iframe.title = cfg.title || 'Демонстрация';
-        iframe.style.cssText = 'width:100%;max-width:720px;aspect-ratio:16/9;border:0;margin-top:12px';
-        slot.appendChild(iframe);
-      } else if (cfg.openUrl) {
-        var a = document.createElement('a');
-        a.href = cfg.openUrl;
-        a.textContent = 'Смотреть демонстрацию';
-        a.target = '_blank';
-        a.rel = 'noopener';
-        a.style.cssText = 'display:inline-block;margin-top:12px;color:#4c70b5;font-weight:500';
-        slot.appendChild(a);
-      }
-    })();
-  </script>
+  <script src="video.js"></script>
 </body>
 </html>
