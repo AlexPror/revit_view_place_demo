@@ -8,6 +8,15 @@
 
 После push в `main` GitHub Actions публикует Pages автоматически (1–2 мин).
 
+### Первый запуск (один раз)
+
+Если сайт не открывается — в репозитории:
+
+1. **Settings → Pages**
+2. **Build and deployment → Source:** выберите **GitHub Actions**
+3. **Actions → Deploy Pages → Re-run all jobs**
+
+
 ## Локальный просмотр
 
 ```powershell
