@@ -16,6 +16,7 @@
         <a class="site-brand" href="#top">RevitViewPlace</a>
         <div class="site-nav-links">
           <a href="#outcome">Эффект</a>
+          <a href="#install">Установка</a>
           <a href="#guide">Инструкция</a>
           <a href="#prepare">Подготовка</a>
           <a href="#planes">Плоскости</a>
@@ -37,8 +38,8 @@
       <p class="lead">По выбранному модулю на фасаде — лист модуля, лист панели и листы профилей. Ниже: рабочие настройки проекта и порядок применения.</p>
       <p><span class="status-pill">Пилот принят</span> — типовой, угловой, горизонтальный, парапетный, узкий и внутренний угловой модули.</p>
       <div class="hero-actions">
-        <a class="btn btn-light" href="#guide">К инструкции</a>
-        <a class="btn btn-ghost" href="#outcome">Эффект по времени</a>
+        <a class="btn btn-light" href="#install">Установка</a>
+        <a class="btn btn-ghost" href="#guide">К инструкции</a>
       </div>
       <div class="hero-stats">
         <div class="stat">
@@ -116,15 +117,72 @@
     </div>
   </section>
 
+  <!-- —— Установка —— -->
+  <section class="section" id="install">
+    <div class="wrap">
+      <p class="section-kicker">Перед работой</p>
+      <h2>Установка в Revit</h2>
+      <p class="lead-section">Установщик <code>.exe</code> не нужен. Копируются два файла в папку надстроек. Поддержка: <strong>Revit 2021</strong> и <strong>Revit 2022</strong> (отдельные пакеты).</p>
+
+      <ol class="steps">
+        <li><strong>Закройте Revit</strong> полностью.</li>
+        <li>Распакуйте ZIP нужной версии (<code>RevitViewPlace_2021</code> или <code>RevitViewPlace_2022</code>).</li>
+        <li>
+          Скопируйте оба файла в одну папку:
+          <ul>
+            <li>Revit 2021 — <code>C:\ProgramData\Autodesk\Revit\Addins\2021\</code></li>
+            <li>Revit 2022 — <code>C:\ProgramData\Autodesk\Revit\Addins\2022\</code></li>
+          </ul>
+          Файлы: <code>RevitViewPlace.dll</code> и <code>RevitViewPlace.addin</code>.
+        </li>
+        <li>
+          Быстрый путь к папке: Win+R → вставьте
+          <code>%ProgramData%\Autodesk\Revit\Addins\2022</code>
+          (или <code>…\2021</code>) → Enter.
+        </li>
+        <li>Запустите Revit. На ленте: вкладка <strong>NORDFOX</strong> → панель View Place.</li>
+      </ol>
+
+      <div class="plane-diagram" style="margin-top: 28px;">
+        <h3 class="table-caption">Если вкладки NORDFOX нет</h3>
+        <table>
+          <thead>
+            <tr><th>Причина</th><th>Что сделать</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Версия пакета не совпадает с Revit</td><td>Возьмите ZIP 2021 или 2022 под вашу версию</td></tr>
+            <tr><td>Revit не перезапускали</td><td>Закройте все окна Revit и откройте снова</td></tr>
+            <tr><td>Файл с сети или флешки заблокирован</td><td>ПКМ по <code>RevitViewPlace.dll</code> → Свойства → Разблокировать → OK</td></tr>
+            <tr><td>Нет прав на ProgramData</td><td>Скопируйте те же два файла в <code>%AppData%\Autodesk\Revit\Addins\2022\</code> (или 2021)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="grid-2" style="margin-top: 24px;">
+        <article class="card">
+          <h3>Обновление</h3>
+          <p class="card-text">Закройте Revit → замените оба файла в той же папке Addins → откройте Revit.</p>
+        </article>
+        <article class="card">
+          <h3>Удаление</h3>
+          <p class="card-text">Удалите <code>RevitViewPlace.dll</code> и <code>RevitViewPlace.addin</code> из папки Addins, перезапустите Revit.</p>
+        </article>
+      </div>
+
+      <p class="note" style="margin-top: 20px;">Логи и выгрузки после работы: <code>Документы\NORDFOX\RevitViewPlace\</code> (папки <code>logs</code> и <code>exports</code>).</p>
+    </div>
+  </section>
+
   <!-- —— Оглавление инструкции —— -->
   <section class="section" id="guide">
     <div class="wrap">
       <h2>Инструкция: настройка и применение</h2>
-      <p class="lead-section">Сначала один раз готовят проект (шаблоны и плоскости). Затем на каждом модуле — выпуск листов, размеры и при необходимости поворот вида.</p>
+      <p class="lead-section">Сначала устанавливают надстройку, затем один раз готовят проект (шаблоны и плоскости). На каждом модуле — выпуск листов, размеры и при необходимости поворот вида.</p>
 
       <ol class="guide-toc">
+        <li><a href="#install"><strong>Установка</strong></a> — DLL и .addin в папку Addins</li>
         <li><a href="#prepare"><strong>Подготовка проекта</strong></a> — шаблоны видов, основная надпись, лента NORDFOX</li>
-        <li><a href="#planes"><strong>Опорные плоскости</strong></a> — для разрезов и для размеров (разные наборы)</li>
+        <li><a href="#planes"><strong>Опорные плоскости</strong></a> — для разрезов и для размеров</li>
         <li><a href="#sheets"><strong>Выпуск листов</strong></a> — модуль, панель, профили</li>
         <li><a href="#dimensions"><strong>Цепочки размеров</strong></a> — после выпуска видов</li>
         <li><a href="#orientation"><strong>Ориентация видов</strong></a> — без пересборки листа</li>
