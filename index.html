@@ -14,19 +14,8 @@
     <nav class="site-nav">
       <div class="wrap site-nav-inner">
         <a class="site-brand" href="#top">RevitViewPlace</a>
-        <div class="site-nav-links">
-          <a href="#outcome">Эффект</a>
-          <a href="#install">Установка</a>
-          <a href="#guide">Инструкция</a>
-          <a href="#prepare">Подготовка</a>
-          <a href="#planes">Плоскости</a>
-          <a href="#sheets">Выпуск</a>
-          <a href="#dimensions">Размеры</a>
-          <a href="#orientation">Ориентация</a>
-          <a href="#check">Контроль</a>
-          <a href="#demo">Видео</a>
-          <a href="#status">Статус</a>
-        </div>
+        <span class="site-nav-hint">инструкция · пилот Сет 2</span>
+        <a class="site-nav-cta" href="#install">Установка</a>
       </div>
     </nav>
   </header>
@@ -62,9 +51,29 @@
     </div>
   </section>
 
+  <div class="doc-shell">
+    <div class="wrap doc-layout">
+      <aside class="doc-toc" aria-label="Разделы">
+        <p class="doc-toc-title">Разделы</p>
+        <nav class="doc-toc-nav">
+          <a href="#outcome">Эффект</a>
+          <a href="#install">Установка</a>
+          <a href="#guide">Инструкция</a>
+          <a href="#prepare">Подготовка</a>
+          <a href="#planes">Плоскости</a>
+          <a href="#sheets">Выпуск</a>
+          <a href="#dimensions">Размеры</a>
+          <a href="#orientation">Ориентация</a>
+          <a href="#check">Контроль</a>
+          <a href="#demo">Видео</a>
+          <a href="#status">Статус</a>
+        </nav>
+      </aside>
+      <div class="doc-main">
+
   <!-- —— Руководство: эффект —— -->
   <section class="section section-alt" id="outcome">
-    <div class="wrap">
+    <div class="section-inner">
       <h2>Эффект по времени</h2>
       <p class="lead-section">Считаем <strong>108 комплектов</strong> — по одному эталону на каждый тип модуля. Повторяющиеся типы оформляются по одной схеме.</p>
 
@@ -284,10 +293,11 @@
       </div>
 
       <h3 class="subhead">Сводная таблица имён (копировать)</h3>
+      <p class="note" style="margin-top:0">В таблице — чистые имена без цифр и букв типа. Тип и номер добавляют по правилам ниже.</p>
       <div class="plane-diagram">
         <table class="copy-table">
           <thead>
-            <tr><th>Имя плоскости</th><th>Где</th><th>Для чего</th></tr>
+            <tr><th>Имя плоскости</th><th>Где / группа UI</th><th>Для чего</th></tr>
           </thead>
           <tbody>
             <tr><td><code>obolochka top</code></td><td>оболочка</td><td>Размеры: верх базы</td></tr>
@@ -298,16 +308,32 @@
             <tr><td><code>profil bottom</code></td><td>профиль</td><td>Размеры: низ профиля</td></tr>
             <tr><td><code>profil left</code></td><td>профиль</td><td>Размеры: левый край</td></tr>
             <tr><td><code>profil right</code></td><td>профиль</td><td>Размеры: правый край</td></tr>
-            <tr><td><code>profil vertikalnyi centr</code></td><td>профиль (стойка)</td><td>Разрезы + размеры: вертикальный центр; признак стойки</td></tr>
-            <tr><td><code>profil gorizontalnyi centr</code></td><td>рама / модуль</td><td>Разрезы + уровни ригелей (не внутри общего profile «на обе роли»)</td></tr>
-            <tr><td><code>zakladnaya 1 top</code></td><td>закладная</td><td>Размеры: край (номер 1)</td></tr>
-            <tr><td><code>zakladnaya 1 bottom</code></td><td>закладная</td><td>Размеры: край</td></tr>
-            <tr><td><code>zakladnaya 1 gorizontalnyi centr</code></td><td>закладная</td><td>Размеры: центр</td></tr>
-            <tr><td><code>zakladnaya 1 vertikalnyi centr</code></td><td>закладная</td><td>Размеры: центр (гориз. цепи)</td></tr>
-            <tr><td><code>iklya 1 top</code></td><td>икля</td><td>Размеры: край</td></tr>
-            <tr><td><code>iklya 1 bottom</code></td><td>икля</td><td>Размеры: край</td></tr>
-            <tr><td><code>iklya 1 gorizontalnyi centr</code></td><td>икля</td><td>Размеры: центр</td></tr>
-            <tr><td><code>iklya 1 vertikalnyi centr</code></td><td>икля</td><td>Размеры: центр</td></tr>
+            <tr><td><code>profil vertikalnyi centr</code></td><td>профиль (стойка)</td><td>Разрезы + размеры; признак стойки</td></tr>
+            <tr><td><code>profil gorizontalnyi centr</code></td><td>рама / модуль</td><td>Разрезы + уровни ригелей</td></tr>
+            <tr><td><code>zakladnaya top</code></td><td>закладные</td><td>Размеры: край</td></tr>
+            <tr><td><code>zakladnaya bottom</code></td><td>закладные</td><td>Размеры: край</td></tr>
+            <tr><td><code>zakladnaya gorizontalnyi centr</code></td><td>закладные</td><td>Размеры: центр</td></tr>
+            <tr><td><code>zakladnaya vertikalnyi centr</code></td><td>закладные</td><td>Размеры: центр (гориз. цепи)</td></tr>
+            <tr><td><code>shpora top</code></td><td>шпоры</td><td>Размеры: край</td></tr>
+            <tr><td><code>shpora bottom</code></td><td>шпоры</td><td>Размеры: край</td></tr>
+            <tr><td><code>shpora gorizontalnyi centr</code></td><td>шпоры</td><td>Размеры: центр</td></tr>
+            <tr><td><code>shpora vertikalnyi centr</code></td><td>шпоры</td><td>Размеры: центр</td></tr>
+            <tr><td><code>zacep top</code></td><td>зацепы</td><td>Размеры: край</td></tr>
+            <tr><td><code>zacep bottom</code></td><td>зацепы</td><td>Размеры: край</td></tr>
+            <tr><td><code>zacep gorizontalnyi centr</code></td><td>зацепы</td><td>Размеры: центр</td></tr>
+            <tr><td><code>zacep vertikalnyi centr</code></td><td>зацепы</td><td>Размеры: центр</td></tr>
+            <tr><td><code>iklya top</code></td><td>икли</td><td>Размеры: край</td></tr>
+            <tr><td><code>iklya bottom</code></td><td>икли</td><td>Размеры: край</td></tr>
+            <tr><td><code>iklya gorizontalnyi centr</code></td><td>икли</td><td>Размеры: центр</td></tr>
+            <tr><td><code>iklya vertikalnyi centr</code></td><td>икли</td><td>Размеры: центр</td></tr>
+            <tr><td><code>soedinitel top</code></td><td>соединители</td><td>Размеры: край</td></tr>
+            <tr><td><code>soedinitel bottom</code></td><td>соединители</td><td>Размеры: край</td></tr>
+            <tr><td><code>soedinitel gorizontalnyi centr</code></td><td>соединители</td><td>Размеры: центр</td></tr>
+            <tr><td><code>soedinitel vertikalnyi centr</code></td><td>соединители</td><td>Размеры: центр</td></tr>
+            <tr><td><code>petlya top</code></td><td>петли</td><td>Размеры: край</td></tr>
+            <tr><td><code>petlya bottom</code></td><td>петли</td><td>Размеры: край</td></tr>
+            <tr><td><code>petlya gorizontalnyi centr</code></td><td>петли</td><td>Размеры: центр</td></tr>
+            <tr><td><code>petlya vertikalnyi centr</code></td><td>петли</td><td>Размеры: центр</td></tr>
           </tbody>
         </table>
       </div>
@@ -316,17 +342,17 @@
       <div class="callout">
         <h4>Как читать имя плоскости</h4>
         <p>Формат: <strong>группа</strong> → при необходимости <strong>тип</strong> → при необходимости <strong>номер</strong> → <strong>роль</strong>.</p>
-        <p><strong>Тип</strong> — любое слово, которое не является числом: буква <code>A</code>, слово <code>zacep</code>, <code>M16</code>. Каждая такая подпись — <strong>свой тип</strong>: <code>A</code> и <code>zacep</code> в списке «Тип» это две разные строки и две разные цепи. Одинаков только приём (слот в имени), не значение.</p>
-        <p><strong>Номер</strong> — только цифры (<code>1</code>, <code>2</code>…). Это порядок деталей в семействе, <strong>не отдельный тип</strong> и не фильтр в диалоге.</p>
-        <p>Примеры: <code>zakladnaya top</code> (без типа и номера) · <code>zakladnaya zacep top</code> (тип = zacep) · <code>zakladnaya A 1 top</code> (тип = A, номер = 1).</p>
-        <p>Плагин смотрит <strong>имя плоскости</strong>, а не имя семейства Revit. Группы в каноне только четыре: оболочка, профиль, закладная, икля.</p>
+        <p><strong>Тип</strong> — любое слово, которое не является числом: буква <code>A</code>, слово <code>M16</code>. Каждая такая подпись — <strong>свой тип</strong> в списке «Тип» диалога размеров.</p>
+        <p><strong>Номер</strong> — только цифры (<code>1</code>, <code>2</code>…). Порядок деталей в семействе, <strong>не отдельный тип</strong> и не фильтр в диалоге.</p>
+        <p>Примеры: <code>zakladnaya top</code> · <code>zacep A top</code> · <code>shpora 1 gorizontalnyi centr</code> · <code>petlya M16 2 top</code>.</p>
+        <p>Плагин смотрит <strong>имя плоскости</strong>, а не имя семейства Revit. Группы деталей: закладные, шпоры, зацепы, профили, икли, соединители, петли.</p>
       </div>
 
       <div class="callout" style="margin-top: 16px;">
-        <h4>Новые детали (зацепы, шпоры, стартовые планки…) — без пересборки плагина</h4>
-        <p>Новый тип детали не требует нового билда. В семействе задаёте плоскости под уже существующую группу (чаще <code>zakladnaya</code> или <code>iklya</code>) и при необходимости отличаете детали <strong>типом</strong> в имени.</p>
-        <p>Пример: семейство называется «Зацеп…», плоскости — <code>zakladnaya top</code> / <code>zakladnaya bottom</code> / <code>zakladnaya gorizontalnyi centr</code>. В команде размеров выбираете группу «закладные» — цепь соберётся.</p>
-        <p>Пересборка нужна только если в интерфейсе появится <em>новая отдельная группа</em> (например отдельный пункт «Шпоры») с новым префиксом в имени. Иначе всегда остаются нативные размеры Revit.</p>
+        <h4>Соответствие: UI ↔ префикс</h4>
+        <p>В команде размеров выбираете группу — ищутся плоскости с тем же префиксом:</p>
+        <p><code>zakladnaya</code> · <code>shpora</code> · <code>zacep</code> · <code>profil</code> · <code>iklya</code> · <code>soedinitel</code> · <code>petlya</code></p>
+        <p>Новая деталь с уже существующим префиксом не требует пересборки плагина. Новый префикс в имени — только после обновления надстройки с новой группой в UI.</p>
       </div>
 
       <div class="plane-diagram" style="margin-top: 20px;">
@@ -339,7 +365,7 @@
             <tr>
               <td><code>zakladnaya top</code></td>
               <td>Только группа + роль</td>
-              <td>Одна общая цепь «закладные» на выбранной стороне.</td>
+              <td>Одна общая цепь группы на выбранной стороне.</td>
             </tr>
             <tr>
               <td><code>zakladnaya 1 top</code>, <code>zakladnaya 2 top</code></td>
@@ -347,14 +373,14 @@
               <td>Не отделяет цепи. При типе «все» в одну цепь попадут и 1, и 2.</td>
             </tr>
             <tr>
-              <td><code>zakladnaya A top</code> и <code>zakladnaya zacep top</code></td>
-              <td><strong>Тип</strong> — буква или слово (один и тот же слот в имени)</td>
-              <td>Это <strong>разные типы</strong>: <code>A</code> и <code>zacep</code> — две строки в поле «Тип» и две разные цепи. Одинаков только способ записи, не значение.</td>
+              <td><code>zacep A top</code> и <code>zacep M16 top</code></td>
+              <td><strong>Тип</strong> — буква или слово</td>
+              <td>Разные типы → две строки в поле «Тип» и две разные цепи.</td>
             </tr>
             <tr>
-              <td><code>zakladnaya zacep 1 top</code></td>
+              <td><code>shpora A 1 top</code></td>
               <td>Тип + номер вместе</td>
-              <td>Цепь фильтруется по <code>zacep</code>; цифра 1 только отличает экземпляры внутри типа.</td>
+              <td>Цепь фильтруется по типу; цифра отличает экземпляры внутри типа.</td>
             </tr>
           </tbody>
         </table>
@@ -470,7 +496,7 @@
     <div class="wrap">
       <p class="section-kicker">Шаг 4 · после листов</p>
       <h2>Цепочки размеров</h2>
-      <p class="lead-section">Отдельная команда. Работает на открытом виде модуля (не на листе). Нужны именованные плоскости в семействах. Зацепы и прочие детали можно вести через группу «закладные» или «икли» — см. <a href="#planes">опорные плоскости</a>.</p>
+      <p class="lead-section">Отдельная команда. Работает на открытом виде модуля (не на листе). Нужны именованные плоскости в семействах. Группы в диалоге: закладные, шпоры, зацепы, профили, икли, соединители, петли — см. <a href="#planes">опорные плоскости</a>.</p>
 
       <ol class="steps">
         <li>Откройте вид модуля (спереди / сбоку / сверху).</li>
@@ -609,6 +635,10 @@
       </div>
     </div>
   </section>
+
+  </div><!-- /.doc-main -->
+  </div><!-- /.doc-layout -->
+  </div><!-- /.doc-shell -->
 
   <footer>
     <div class="wrap">

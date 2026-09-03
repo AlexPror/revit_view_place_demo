@@ -47,7 +47,7 @@ strong { font-weight: 500; }
   display: flex;
   align-items: center;
   gap: 16px 24px;
-  min-height: 60px;
+  min-height: 56px;
   flex-wrap: wrap;
 }
 .site-brand {
@@ -57,14 +57,90 @@ strong { font-weight: 500; }
   font-size: 0.95rem;
   letter-spacing: 0.02em;
 }
-.site-nav-links { display: flex; flex-wrap: wrap; gap: 12px 20px; flex: 1; }
-.site-nav-links a {
-  color: #c8d4e8;
+.site-nav-hint {
+  color: #9aabc4;
+  font-size: 0.8rem;
+  font-weight: 300;
+  flex: 1;
+}
+.site-nav-cta {
+  color: #fff;
   text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 6px 14px;
+}
+.site-nav-cta:hover { border-color: #fff; }
+
+/* WordPress-like: контент + оглавление справа */
+.doc-shell {
+  background: var(--white);
+  border-top: 1px solid var(--line);
+}
+.doc-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: 28px 40px;
+  align-items: start;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.doc-main {
+  min-width: 0;
+  grid-column: 1;
+  grid-row: 1;
+}
+.doc-toc {
+  position: sticky;
+  top: 88px;
+  align-self: start;
+  padding: 16px 0 24px;
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+  max-height: calc(100vh - 100px);
+  overflow: auto;
+  grid-column: 2;
+  grid-row: 1;
+}
+.doc-toc-title {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.doc-toc-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.doc-toc-nav a {
+  display: block;
+  text-decoration: none;
+  color: var(--nf-slate);
   font-size: 0.875rem;
   font-weight: 400;
+  padding: 5px 0;
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+  margin-left: -12px;
 }
-.site-nav-links a:hover { color: #fff; }
+.doc-toc-nav a:hover {
+  color: var(--nf-blue);
+  border-left-color: var(--nf-blue);
+}
+.doc-main > .section:first-child {
+  padding-top: 32px;
+}
+.doc-main .wrap,
+.doc-main .section-inner {
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
 
 .hero {
   background: linear-gradient(135deg, var(--ink) 0%, var(--nf-slate) 55%, var(--nf-blue-dark) 100%);
@@ -404,13 +480,40 @@ footer {
 footer a { color: #fff; }
 footer code { color: #e9ecef; }
 
+@media (max-width: 960px) {
+  .doc-layout {
+    grid-template-columns: 1fr;
+  }
+  .doc-toc {
+    position: static;
+    max-height: none;
+    border-left: none;
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+    margin-bottom: 8px;
+    order: -1;
+  }
+  .doc-toc-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+  }
+  .doc-toc-nav a {
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+    padding: 4px 0;
+    font-size: 0.82rem;
+  }
+  .doc-toc-nav a:hover { border-left-color: transparent; }
+}
+
 @media (max-width: 600px) {
   .bar-row { grid-template-columns: 1fr; }
   .hero h1 { font-size: 1.75rem; }
   .outcome-side strong { font-size: 1.5rem; }
   .template-list li { grid-template-columns: 1fr; gap: 4px; }
-  .site-nav-links { gap: 8px 12px; }
-  .site-nav-links a { font-size: 0.8rem; }
+  .site-nav-hint { display: none; }
 }
 
 /* —— Демонстрация (видео) —— */
