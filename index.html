@@ -147,7 +147,7 @@
       <p class="lead-section">Без шаблонов видов с точными именами выпуск листов не стартует (или потребуется ручной выбор в диалоге).</p>
 
       <h3 class="subhead">Шаблоны видов</h3>
-      <p>Имена должны совпадать <strong>точно</strong> (включая регистр и пробелы):</p>
+      <p>Имена должны совпадать <strong>точно</strong> (включая регистр и пробелы). Можно скопировать из списка:</p>
       <ul class="template-list">
         <li><span>NF КМД Модуль</span> — фасад модуля</li>
         <li><span>NF КМД Рама</span> — вид рамы</li>
@@ -157,6 +157,17 @@
         <li><span>NF КМД Профили</span> — листы стоек и ригелей</li>
       </ul>
       <p class="note">Также в проекте должна быть основная надпись нужного формата (A3, A2 и т.д.).</p>
+
+      <div class="demo-inline" id="demo-templates">
+        <div class="demo-block-head">
+          <span class="demo-num">Т</span>
+          <div>
+            <h3>Видео: шаблоны видов</h3>
+            <p>Где в проекте создать шаблоны и как задать имена NF КМД …</p>
+          </div>
+        </div>
+        <div class="video-mount" data-video-id="templates"></div>
+      </div>
 
       <h3 class="subhead">Лента NORDFOX</h3>
       <div class="grid-3">
@@ -170,8 +181,13 @@
         </article>
         <article class="card">
           <h3>Ориентация видов</h3>
-          <p class="card-text">Поворот выбранного вида на 90° или 180° без пересборки листа.</p>
+          <p class="card-text">Крест стрелок и угол 90 / 180 / 270°. Работает на видах плагина и на обычных видах Revit.</p>
         </article>
+      </div>
+
+      <div class="callout" style="margin-top: 24px;">
+        <h4>Нативные возможности Revit</h4>
+        <p>Надстройка <strong>не блокирует</strong> ручное создание видов, разрезов, размеров и листов. Можно доводить эталоны и чертежи штатными средствами Revit; команды NORDFOX — ускорение, а не замена.</p>
       </div>
 
       <div class="plane-diagram" style="margin-top: 28px;">
@@ -196,77 +212,62 @@
     <div class="wrap">
       <p class="section-kicker">Шаг 2 · семейства</p>
       <h2>Опорные плоскости</h2>
-      <p class="lead-section">Два разных набора: для разрезов на листах и для цепочек размеров. Не смешивать требования.</p>
+      <p class="lead-section">Полный канон имён — в таблице ниже. Можно копировать строку целиком в имя плоскости семейства. Латиница, нижний регистр, слова через пробел; «Является ссылкой» = Сильная.</p>
 
-      <h3 class="subhead">Для разрезов и листов</h3>
-      <p>Улучшают точность. Если плоскостей нет — листы всё равно создаются по габариту профилей.</p>
+      <div class="demo-inline" id="demo-planes">
+        <div class="demo-block-head">
+          <span class="demo-num">П</span>
+          <div>
+            <h3>Видео: опорные плоскости</h3>
+            <p>Где ставить плоскости в модуле, раме и профиле.</p>
+          </div>
+        </div>
+        <div class="video-mount" data-video-id="planes"></div>
+      </div>
+
+      <h3 class="subhead">Сводная таблица имён (копировать)</h3>
       <div class="plane-diagram">
-        <table>
+        <table class="copy-table">
           <thead>
-            <tr><th>Имя плоскости</th><th>Где задавать</th><th>Назначение</th></tr>
+            <tr><th>Имя плоскости</th><th>Где</th><th>Для чего</th></tr>
           </thead>
           <tbody>
-            <tr>
-              <td><code>profil vertikalnyi centr</code></td>
-              <td>Вложенный профиль (стойка)</td>
-              <td>Вертикальный разрез; признак стойки, если плоскость перпендикулярна ширине модуля</td>
-            </tr>
-            <tr>
-              <td><code>profil gorizontalnyi centr</code></td>
-              <td>Рама или модуль</td>
-              <td>Уровень ригеля и высота горизонтального разреза</td>
-            </tr>
+            <tr><td><code>obolochka top</code></td><td>оболочка</td><td>Размеры: верх базы</td></tr>
+            <tr><td><code>obolochka bottom</code></td><td>оболочка</td><td>Размеры: низ базы</td></tr>
+            <tr><td><code>obolochka left</code></td><td>оболочка</td><td>Размеры: левый край базы</td></tr>
+            <tr><td><code>obolochka right</code></td><td>оболочка</td><td>Размеры: правый край базы</td></tr>
+            <tr><td><code>profil top</code></td><td>профиль</td><td>Размеры: верх профиля</td></tr>
+            <tr><td><code>profil bottom</code></td><td>профиль</td><td>Размеры: низ профиля</td></tr>
+            <tr><td><code>profil left</code></td><td>профиль</td><td>Размеры: левый край</td></tr>
+            <tr><td><code>profil right</code></td><td>профиль</td><td>Размеры: правый край</td></tr>
+            <tr><td><code>profil vertikalnyi centr</code></td><td>профиль (стойка)</td><td>Разрезы + размеры: вертикальный центр; признак стойки</td></tr>
+            <tr><td><code>profil gorizontalnyi centr</code></td><td>рама / модуль</td><td>Разрезы + уровни ригелей (не внутри общего profile «на обе роли»)</td></tr>
+            <tr><td><code>zakladnaya 1 top</code></td><td>закладная</td><td>Размеры: край (номер 1)</td></tr>
+            <tr><td><code>zakladnaya 1 bottom</code></td><td>закладная</td><td>Размеры: край</td></tr>
+            <tr><td><code>zakladnaya 1 gorizontalnyi centr</code></td><td>закладная</td><td>Размеры: центр</td></tr>
+            <tr><td><code>zakladnaya 1 vertikalnyi centr</code></td><td>закладная</td><td>Размеры: центр (гориз. цепи)</td></tr>
+            <tr><td><code>iklya 1 top</code></td><td>икля</td><td>Размеры: край</td></tr>
+            <tr><td><code>iklya 1 bottom</code></td><td>икля</td><td>Размеры: край</td></tr>
+            <tr><td><code>iklya 1 gorizontalnyi centr</code></td><td>икля</td><td>Размеры: центр</td></tr>
+            <tr><td><code>iklya 1 vertikalnyi centr</code></td><td>икля</td><td>Размеры: центр</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">Горизонтальную центровою плоскость ригеля задают на <strong>раме/модуле</strong>, а не внутри одного общего семейства профиля «на оба роли».</p>
+      <p class="note">Номер (<code>1</code>, <code>2</code>…) и тип (<code>A</code>, <code>B</code>, <code>M16</code>…) вставляются при необходимости: <code>zakladnaya A 1 top</code>, <code>iklya B 1 gorizontalnyi centr</code>. Для листов достаточно пары <code>profil vertikalnyi centr</code> + <code>profil gorizontalnyi centr</code> на раме; без них листы всё равно выходят по геометрии.</p>
 
-      <h3 class="subhead">Для цепочек размеров</h3>
-      <p>Без этих плоскостей команда размеров не найдёт привязки.</p>
-      <div class="plane-diagram">
-        <table>
-          <thead>
-            <tr><th>Группа</th><th>Роли</th><th>Примеры имён</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Оболочка</td>
-              <td>верх / низ / лево / право</td>
-              <td><code>obolochka top</code>, <code>obolochka left</code></td>
-            </tr>
-            <tr>
-              <td>Профиль</td>
-              <td>края и центры</td>
-              <td><code>profil left</code>, <code>profil top</code>, <code>profil vertikalnyi centr</code></td>
-            </tr>
-            <tr>
-              <td>Закладная</td>
-              <td>края и центры, номер</td>
-              <td><code>zakladnaya 1 top</code>, <code>zakladnaya 1 gorizontalnyi centr</code></td>
-            </tr>
-            <tr>
-              <td>Икля</td>
-              <td>края и центры, номер</td>
-              <td><code>iklya 1 bottom</code>, <code>iklya 1 gorizontalnyi centr</code></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <details>
-        <summary>Правила именования и загрузки семейств</summary>
-        <ul>
-          <li>Латиница, нижний регистр, слова через пробел.</li>
-          <li>На рабочих плоскостях: «Является ссылкой» = Сильная.</li>
-          <li>После правок семейства: «Загрузить в проект» → «Перезаписать» по всей цепочке вложенных семейств.</li>
-          <li>Тип детали в имени (A, B, M16…) — только если на одном виде нужно размерять типы раздельно.</li>
-        </ul>
-      </details>
-
-      <details>
-        <summary>Одно семейство профиля или два</summary>
+      <div class="callout note-callout">
+        <h4>Примечание: одно семейство профиля или два</h4>
         <p><strong>Одно семейство</strong> — в ведомости одна строка на тип сечения. Стойка или ригель определяются при выпуске листов по плоскости и ориентации.</p>
         <p><strong>Два семейства</strong> — учёт одного проката дублируется. На скорость выпуска листов это не влияет.</p>
+        <p><strong>Риски двух семейств:</strong> исполнитель может поставить «стойку» из семейства ригеля (или наоборот) — ошибка не видна до выпуска чертежей и спецификации; две номенклатуры на один прокат усложняют закупку и контроль остатков; при смене сечения правки нужно повторять в обоих семействах.</p>
+      </div>
+
+      <details>
+        <summary>Правила загрузки семейств</summary>
+        <ul>
+          <li>После правок: «Загрузить в проект» → «Перезаписать» по всей цепочке вложенных семейств.</li>
+          <li>Тип в имени — только если на одном виде нужно размерять типы раздельно.</li>
+        </ul>
       </details>
 
       <details>
@@ -399,18 +400,19 @@
     <div class="wrap">
       <p class="section-kicker">Шаг 5 · при смене фасада</p>
       <h2>Ориентация видов</h2>
-      <p class="lead-section">Поворот уже созданного вида. Лист не пересоздаётся — экономия на повторном выборе модуля, разрезах и скрытии деталей.</p>
+      <p class="lead-section">Крест стрелок и угол из списка (90° по умолчанию, также 180° и 270°). Лист не пересоздаётся. Работает на видах комплекта плагина и на обычных видах / эталонах Revit.</p>
 
       <ol class="steps">
-        <li>Выберите видовой экран на листе или откройте вид комплекта.</li>
+        <li>Выберите видовой экран на листе или откройте вид (разрез, фасад, 3д).</li>
         <li><strong>NORDFOX → Ориентация видов</strong>.</li>
-        <li>Поворот на 90° или 180° (для изометрии — орбита / разворот).</li>
+        <li>Выберите угол, нажмите стрелку направления поворота.</li>
       </ol>
 
       <div class="callout">
-        <h4>Когда хватает поворота, а когда нужна пересборка</h4>
-        <p><strong>Поворот</strong> — тот же модуль на другом фасаде, нужно развернуть кадр.</p>
-        <p><strong>Замена комплекта</strong> — добавились стойки или ригели, нужна новая схема разрезов, сбилась изоляция или обрезка вида.</p>
+        <h4>Два режима</h4>
+        <p><strong>Вид комплекта плагина</strong> — после поворота обновляется изоляция и подписи по роли вида.</p>
+        <p><strong>Обычный / эталонный вид</strong> — только поворот кадра, без изоляции плагина (чтобы не скрыть геометрию эталона).</p>
+        <p>Ручные виды, разрезы и размеры Revit по-прежнему доступны; команда их не отключает.</p>
       </div>
 
       <div class="demo-inline" id="demo-orientation">
@@ -418,7 +420,7 @@
           <span class="demo-num">3</span>
           <div>
             <h3>Видео: смена ориентации</h3>
-            <p>Поворот вида без пересборки листа.</p>
+            <p>Стрелки и угол 90 / 180 / 270°.</p>
           </div>
         </div>
         <div class="video-mount" data-video-id="orientation"></div>
@@ -442,8 +444,9 @@
       </ol>
 
       <details>
-        <summary>Анализ проекта (по желанию)</summary>
-        <p>Команда выгружает таблицу по модулям: сколько стоек и ригелей найдено, готовность к листам профилей. Удобно перед массовым выпуском.</p>
+        <summary>Анализ проекта</summary>
+        <p><strong>Сейчас:</strong> команда пишет отчёт в журнал и выгружает CSV по модулям (стойки, ригели, готовность к листам профилей, покрытие сценариями) — удобно перед массовым выпуском и для разработчика.</p>
+        <p><strong>В планах:</strong> сводка по проекту (сколько комплектов сделано / осталось), мини-спецификация (количество, вес) и выгрузка в Excel по <strong>текущим шаблонам спецификаций</strong> офиса — одна картина для руководства и КМД.</p>
       </details>
     </div>
   </section>
@@ -452,19 +455,27 @@
   <section class="section section-alt" id="demo">
     <div class="wrap">
       <h2>Видео — кратко</h2>
-      <p class="lead-section">Три ролика привязаны к шагам выше. Здесь — быстрый переход.</p>
+      <p class="lead-section">Пять роликов по шагам настройки и работы. Сюда — быстрый переход.</p>
       <div class="grid-3">
+        <a class="card card-link" href="#demo-templates">
+          <h3>Шаблоны</h3>
+          <p class="card-text">Имена NF КМД … в проекте</p>
+        </a>
+        <a class="card card-link" href="#demo-planes">
+          <h3>Плоскости</h3>
+          <p class="card-text">Где ставить имена в семействах</p>
+        </a>
         <a class="card card-link" href="#demo-views">
-          <h3>1. Виды и листы</h3>
-          <p class="card-text">Выпуск комплекта по эталону</p>
+          <h3>Виды и листы</h3>
+          <p class="card-text">Выпуск комплекта</p>
         </a>
         <a class="card card-link" href="#demo-dimensions">
-          <h3>2. Размеры</h3>
-          <p class="card-text">Цепочки на виде модуля</p>
+          <h3>Размеры</h3>
+          <p class="card-text">Цепочки на виде</p>
         </a>
         <a class="card card-link" href="#demo-orientation">
-          <h3>3. Ориентация</h3>
-          <p class="card-text">Поворот без пересборки</p>
+          <h3>Ориентация</h3>
+          <p class="card-text">Стрелки и угол</p>
         </a>
       </div>
     </div>
