@@ -23,20 +23,28 @@
   function mountItem(root, item) {
     var src = resolveSources(item);
     var title = item.title || 'Демонстрация';
+    var lead = item.lead || '';
     root.innerHTML = '';
 
-    if (src.iframeSrc) {
-      var frameWrap = document.createElement('div');
-      frameWrap.className = 'video-embed';
-      var iframe = document.createElement('iframe');
-      iframe.src = src.iframeSrc;
-      iframe.title = title;
-      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture');
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.setAttribute('loading', 'lazy');
-      frameWrap.appendChild(iframe);
-      root.appendChild(frameWrap);
-    } else if (src.mp4Url) {
+    // Google Drive /preview часто пустой (логин, cookies, блокировка iframe).
+    // Главный UX — заметная карточка со ссылкой; iframe только доп. попытка.
+    if (src.openUrl) {
+      var card = document.createElement('a');
+      card.className = 'video-card';
+      card.href = src.openUrl;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+      card.innerHTML =
+        '<span class="video-card-play" aria-hidden="true">▶</span>' +
+        '<span class="video-card-body">' +
+        '<strong class="video-card-title">' + escapeHtml(title) + '</strong>' +
+        (lead ? '<span class="video-card-lead">' + escapeHtml(lead) + '</span>' : '') +
+        '<span class="video-card-cta">Смотреть видео</span>' +
+        '</span>';
+      root.appendChild(card);
+    }
+
+    if (src.mp4Url && !src.openUrl) {
       var video = document.createElement('video');
       video.className = 'video-native';
       video.controls = true;
@@ -44,26 +52,31 @@
       video.src = src.mp4Url;
       video.setAttribute('playsinline', '');
       root.appendChild(video);
-    } else {
-      var placeholder = document.createElement('div');
-      placeholder.className = 'video-placeholder';
-      placeholder.innerHTML = '<span class="video-placeholder-icon" aria-hidden="true">▶</span><span>Видео будет добавлено</span>';
-      if (src.openUrl) {
-        var link = document.createElement('a');
-        link.href = src.openUrl;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = 'Открыть видео';
-        placeholder.appendChild(link);
-      }
-      root.appendChild(placeholder);
+      return;
     }
 
-    if (src.openUrl && src.iframeSrc) {
-      var ext = document.createElement('p');
-      ext.className = 'video-fallback';
-      ext.innerHTML = 'Если плеер не открылся: <a href="' + escapeAttr(src.openUrl) + '" target="_blank" rel="noopener noreferrer">открыть видео отдельно</a>.';
-      root.appendChild(ext);
+    // iframe только если нет прямой ссылки (Drive preview часто пустой в iframe).
+    if (src.iframeSrc && !src.openUrl) {
+      var frameWrap = document.createElement('div');
+      frameWrap.className = 'video-embed';
+      var iframe = document.createElement('iframe');
+      iframe.src = src.iframeSrc;
+      iframe.title = title;
+      iframe.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
+      iframe.setAttribute('allowfullscreen', '');
+      iframe.setAttribute('loading', 'lazy');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      frameWrap.appendChild(iframe);
+      root.appendChild(frameWrap);
+    }
+
+    if (!src.openUrl && !src.iframeSrc && !src.mp4Url) {
+      var placeholder = document.createElement('div');
+      placeholder.className = 'video-placeholder';
+      placeholder.innerHTML =
+        '<span class="video-placeholder-icon" aria-hidden="true">▶</span>' +
+        '<span>Видео будет добавлено</span>';
+      root.appendChild(placeholder);
     }
   }
 
