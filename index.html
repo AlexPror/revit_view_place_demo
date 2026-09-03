@@ -316,7 +316,7 @@
       <div class="callout">
         <h4>Как читать имя плоскости</h4>
         <p>Формат: <strong>группа</strong> → при необходимости <strong>тип</strong> → при необходимости <strong>номер</strong> → <strong>роль</strong>.</p>
-        <p><strong>Тип</strong> — любое слово, которое не является числом: буква <code>A</code>, слово <code>zacep</code>, <code>M16</code>. Это одно и то же поле: оно попадает в список «Тип» в диалоге размеров и <strong>меняет цепь</strong>.</p>
+        <p><strong>Тип</strong> — любое слово, которое не является числом: буква <code>A</code>, слово <code>zacep</code>, <code>M16</code>. Каждая такая подпись — <strong>свой тип</strong>: <code>A</code> и <code>zacep</code> в списке «Тип» это две разные строки и две разные цепи. Одинаков только приём (слот в имени), не значение.</p>
         <p><strong>Номер</strong> — только цифры (<code>1</code>, <code>2</code>…). Это порядок деталей в семействе, <strong>не отдельный тип</strong> и не фильтр в диалоге.</p>
         <p>Примеры: <code>zakladnaya top</code> (без типа и номера) · <code>zakladnaya zacep top</code> (тип = zacep) · <code>zakladnaya A 1 top</code> (тип = A, номер = 1).</p>
         <p>Плагин смотрит <strong>имя плоскости</strong>, а не имя семейства Revit. Группы в каноне только четыре: оболочка, профиль, закладная, икля.</p>
@@ -347,9 +347,9 @@
               <td>Не отделяет цепи. При типе «все» в одну цепь попадут и 1, и 2.</td>
             </tr>
             <tr>
-              <td><code>zakladnaya A top</code> или <code>zakladnaya zacep top</code></td>
-              <td><strong>Тип</strong> — буква или слово (одно и то же)</td>
-              <td>Появляется в поле «Тип». Можно собрать отдельную цепь: только A или только zacep.</td>
+              <td><code>zakladnaya A top</code> и <code>zakladnaya zacep top</code></td>
+              <td><strong>Тип</strong> — буква или слово (один и тот же слот в имени)</td>
+              <td>Это <strong>разные типы</strong>: <code>A</code> и <code>zacep</code> — две строки в поле «Тип» и две разные цепи. Одинаков только способ записи, не значение.</td>
             </tr>
             <tr>
               <td><code>zakladnaya zacep 1 top</code></td>
