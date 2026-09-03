@@ -4,22 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>RevitViewPlace — листы КМД по эталонам · NORDFOX</title>
+  <title>RevitViewPlace — настройка и применение · NORDFOX</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header class="site-header">
-    <div class="pilot-banner">Пилот · Revit 2021/2022 · проект R22 (вар 3) · сентябрь 2026</div>
+    <div class="pilot-banner">Пилот · Revit 2021/2022 · проект R22 (вар 3) · сентябрь 2026 · инструкция по настройке и выпуску</div>
     <nav class="site-nav">
       <div class="wrap site-nav-inner">
         <a class="site-brand" href="#top">RevitViewPlace</a>
         <div class="site-nav-links">
           <a href="#outcome">Эффект</a>
-          <a href="#what">Возможности</a>
-          <a href="#scale">Масштаб</a>
+          <a href="#guide">Инструкция</a>
+          <a href="#prepare">Подготовка</a>
           <a href="#planes">Плоскости</a>
-          <a href="#demo">Демонстрация</a>
+          <a href="#sheets">Выпуск</a>
+          <a href="#dimensions">Размеры</a>
+          <a href="#orientation">Ориентация</a>
+          <a href="#check">Контроль</a>
+          <a href="#demo">Видео</a>
           <a href="#status">Статус</a>
         </div>
       </div>
@@ -30,8 +34,12 @@
     <div class="wrap">
       <p class="eyebrow">Надстройка для Autodesk Revit · <a href="https://nordfox.ru/" style="color:#fff;opacity:.9">NORDFOX</a></p>
       <h1>Листы КМД по эталонам</h1>
-      <p class="lead">По выбранному модулю на фасаде формируются лист модуля, лист панели и листы профилей. Раскладка видов и шаблоны — как в эталонных чертежах проектного бюро.</p>
-      <p><span class="status-pill">Пилот принят</span> — проверены типовой, угловой, горизонтальный, парапетный, узкий и внутренний угловой модули.</p>
+      <p class="lead">По выбранному модулю на фасаде — лист модуля, лист панели и листы профилей. Ниже: рабочие настройки проекта и порядок применения.</p>
+      <p><span class="status-pill">Пилот принят</span> — типовой, угловой, горизонтальный, парапетный, узкий и внутренний угловой модули.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="#guide">К инструкции</a>
+        <a class="btn btn-ghost" href="#outcome">Эффект по времени</a>
+      </div>
       <div class="hero-stats">
         <div class="stat">
           <span class="stat-label">Комплектов по типам</span>
@@ -53,10 +61,11 @@
     </div>
   </section>
 
+  <!-- —— Руководство: эффект —— -->
   <section class="section section-alt" id="outcome">
     <div class="wrap">
       <h2>Эффект по времени</h2>
-      <p class="lead-section">Считаем <strong>108 комплектов</strong> — по одному эталону на каждый тип модуля. Повторяющиеся типы оформляются по одной схеме; в сравнении участвуют типы, а не каждый модуль на фасаде отдельно.</p>
+      <p class="lead-section">Считаем <strong>108 комплектов</strong> — по одному эталону на каждый тип модуля. Повторяющиеся типы оформляются по одной схеме.</p>
 
       <div class="outcome-strip">
         <p><strong>Один комплект</strong> — лист модуля, лист панели, листы профилей, цепочки размеров и при необходимости поворот вида под другой фасад.</p>
@@ -74,7 +83,7 @@
             <tr><td><strong>Итого на комплект</strong></td><td><strong>60–90 мин</strong></td><td><strong>10–15 мин</strong></td></tr>
           </tbody>
         </table>
-        <p style="color: var(--muted); margin: 12px 0 0; font-size: 0.88rem;">* Вручную — повторный выбор модуля, разрезов и скрытие лишних элементов. Команда «Ориентация видов» поворачивает уже созданный вид без пересборки листа.</p>
+        <p class="note">* Вручную — повторный выбор модуля, разрезов и скрытие лишних элементов. Команда «Ориентация видов» поворачивает уже созданный вид без пересборки листа.</p>
 
         <div class="outcome-compare" style="margin-top: 28px;">
           <div class="outcome-side">
@@ -87,158 +96,376 @@
             <strong>18–27 ч</strong>
           </div>
         </div>
-        <p style="color: var(--muted); margin: 0;">Ориентир — примерно в 5–6 раз быстрее на полный комплект. Точные цифры — по замерам на проекте R22.</p>
+        <p class="note" style="margin: 0;">Ориентир — примерно в 5–6 раз быстрее. Точные цифры — по замерам на R22.</p>
       </div>
 
-      <h3 style="margin-top: 36px; font-weight: 300;">Сравнение по проекту R22</h3>
-      <div class="chart-bars">
-        <div class="bar-row">
-          <span>108 типов</span>
-          <div class="bar-track"><div class="bar-fill bar-manual" style="width: 100%">вручную 108–162 ч</div></div>
-          <span>108–162 ч</span>
-        </div>
-        <div class="bar-row">
-          <span>108 типов</span>
-          <div class="bar-track"><div class="bar-fill bar-plugin" style="width: 17%">надстройка 18–27 ч</div></div>
-          <span>18–27 ч</span>
-        </div>
+      <div class="plane-diagram" style="margin-top: 28px;">
+        <table>
+          <thead>
+            <tr><th>Показатель R22</th><th>Значение</th><th>Пояснение</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Модулей на фасадах</td><td>656</td><td>Монтажный объём</td></tr>
+            <tr><td>Типов модулей</td><td>~108</td><td>Эталонные комплекты КМД</td></tr>
+            <tr><td>Средняя кратность типа</td><td>~6</td><td>656 ÷ 108</td></tr>
+            <tr><td>Экономия времени</td><td>90–135 ч</td><td>108–162 ч вручную минус 18–27 ч</td></tr>
+            <tr><td>Эквивалент рабочих дней</td><td>11–17</td><td>При 8-часовом дне</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <section class="section" id="what">
+  <!-- —— Оглавление инструкции —— -->
+  <section class="section" id="guide">
     <div class="wrap">
-      <h2>Возможности</h2>
-      <div class="grid-2">
+      <h2>Инструкция: настройка и применение</h2>
+      <p class="lead-section">Сначала один раз готовят проект (шаблоны и плоскости). Затем на каждом модуле — выпуск листов, размеры и при необходимости поворот вида.</p>
+
+      <ol class="guide-toc">
+        <li><a href="#prepare"><strong>Подготовка проекта</strong></a> — шаблоны видов, основная надпись, лента NORDFOX</li>
+        <li><a href="#planes"><strong>Опорные плоскости</strong></a> — для разрезов и для размеров (разные наборы)</li>
+        <li><a href="#sheets"><strong>Выпуск листов</strong></a> — модуль, панель, профили</li>
+        <li><a href="#dimensions"><strong>Цепочки размеров</strong></a> — после выпуска видов</li>
+        <li><a href="#orientation"><strong>Ориентация видов</strong></a> — без пересборки листа</li>
+        <li><a href="#check"><strong>Контроль после выпуска</strong></a> — что правит Revit вручную</li>
+      </ol>
+
+      <div class="callout">
+        <h4>Главное правило</h4>
+        <p>Для <strong>выпуска листов</strong> обновлять семейства с опорными плоскостями <strong>не обязательно</strong>: надстройка находит стойки и ригели по геометрии профилей.</p>
+        <p>Для <strong>цепочек размеров</strong> именованные плоскости в семействах <strong>нужны</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- —— 1. Подготовка —— -->
+  <section class="section section-alt" id="prepare">
+    <div class="wrap">
+      <p class="section-kicker">Шаг 1 · один раз на проект</p>
+      <h2>Подготовка проекта</h2>
+      <p class="lead-section">Без шаблонов видов с точными именами выпуск листов не стартует (или потребуется ручной выбор в диалоге).</p>
+
+      <h3 class="subhead">Шаблоны видов</h3>
+      <p>Имена должны совпадать <strong>точно</strong> (включая регистр и пробелы):</p>
+      <ul class="template-list">
+        <li><span>NF КМД Модуль</span> — фасад модуля</li>
+        <li><span>NF КМД Рама</span> — вид рамы</li>
+        <li><span>NF КМД Разрезы</span> — разрезы и вид сзади панели</li>
+        <li><span>NF КМД Изометрия</span> — изометрия</li>
+        <li><span>NF КМД Панель</span> — фасад панели</li>
+        <li><span>NF КМД Профили</span> — листы стоек и ригелей</li>
+      </ul>
+      <p class="note">Также в проекте должна быть основная надпись нужного формата (A3, A2 и т.д.).</p>
+
+      <h3 class="subhead">Лента NORDFOX</h3>
+      <div class="grid-3">
         <article class="card">
-          <h3>Лист модуля (В9 / В20)</h3>
-          <ul>
-            <li>Фасад, разрезы по стойкам и ригелям, рама, изометрия</li>
-            <li>Типовой и угловой модуль</li>
-          </ul>
+          <h3>Листы КМД</h3>
+          <p class="card-text">Сценарии: лист модуля, лист панели, листы профилей.</p>
         </article>
         <article class="card">
-          <h3>Лист панели (В10 / В21)</h3>
-          <ul>
-            <li>Виды оболочки спереди и сзади, разрезы</li>
-            <li>Оформляется отдельно и не заменяет лист модуля</li>
-          </ul>
-        </article>
-        <article class="card">
-          <h3>Листы профилей (В11–В12 / В22–В25)</h3>
-          <ul>
-            <li>Выделение стоек и ригелей, обрезка вида по эталону</li>
-            <li>Для угловых модулей — раскладка по эталонным листам В22–В25</li>
-          </ul>
-        </article>
-        <article class="card card-highlight">
           <h3>Цепочки размеров</h3>
-          <ul>
-            <li>От базовой линии до центров деталей по выбранной стороне вида</li>
-            <li>Выполняется отдельной командой, после выпуска листов</li>
-          </ul>
+          <p class="card-text">Простановка размеров по именованным плоскостям на открытом виде.</p>
         </article>
-        <article class="card card-highlight">
+        <article class="card">
           <h3>Ориентация видов</h3>
-          <ul>
-            <li>Поворот одного вида на 90° или 180° без пересборки листа</li>
-            <li>Для модулей на других фасадах — без повторной настройки разрезов и скрытий</li>
-          </ul>
+          <p class="card-text">Поворот выбранного вида на 90° или 180° без пересборки листа.</p>
         </article>
+      </div>
+
+      <div class="plane-diagram" style="margin-top: 28px;">
+        <h3 class="table-caption">Что делает надстройка / что остаётся вручную</h3>
+        <table>
+          <thead>
+            <tr><th>Автоматически</th><th>Вручную в Revit</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Число разрезов по стойкам и ригелям</td><td>Точные миллиметры положения разрезов</td></tr>
+            <tr><td>Состав листа (фасад, рама, разрезы, изометрия)</td><td>Подписи маркеров 1-1, 2-2…</td></tr>
+            <tr><td>Масштаб из диалога</td><td>Раскладка видов на листе</td></tr>
+            <tr><td>Выбор крайних стоек и ригелей на профилях</td><td>Отключение лишних маркеров (видимость аннотаций)</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <section class="section section-alt" id="scale">
+  <!-- —— 2. Плоскости —— -->
+  <section class="section" id="planes">
     <div class="wrap">
-      <h2>Масштаб проекта R22 (вар 3)</h2>
-      <p>Данные команды «Анализ проекта», 02.09.2026.</p>
+      <p class="section-kicker">Шаг 2 · семейства</p>
+      <h2>Опорные плоскости</h2>
+      <p class="lead-section">Два разных набора: для разрезов на листах и для цепочек размеров. Не смешивать требования.</p>
+
+      <h3 class="subhead">Для разрезов и листов</h3>
+      <p>Улучшают точность. Если плоскостей нет — листы всё равно создаются по габариту профилей.</p>
       <div class="plane-diagram">
         <table>
           <thead>
-            <tr><th>Показатель</th><th>Значение</th><th>Пояснение</th></tr>
+            <tr><th>Имя плоскости</th><th>Где задавать</th><th>Назначение</th></tr>
           </thead>
           <tbody>
-            <tr><td>Модулей на фасадах</td><td>656</td><td>Монтажный объём проекта</td></tr>
-            <tr><td>Типов модулей</td><td>~108</td><td>Столько эталонных комплектов КМД</td></tr>
-            <tr><td>Средняя кратность типа</td><td>~6</td><td>656 ÷ 108 — модулей на один эталон</td></tr>
-            <tr><td>Экономия времени на R22</td><td>90–135 ч</td><td>Разница между 108–162 ч вручную и 18–27 ч с надстройкой</td></tr>
-            <tr><td>Эквивалент рабочих дней</td><td>11–17</td><td>При 8-часовом дне (только выпуск комплектов)</td></tr>
+            <tr>
+              <td><code>profil vertikalnyi centr</code></td>
+              <td>Вложенный профиль (стойка)</td>
+              <td>Вертикальный разрез; признак стойки, если плоскость перпендикулярна ширине модуля</td>
+            </tr>
+            <tr>
+              <td><code>profil gorizontalnyi centr</code></td>
+              <td>Рама или модуль</td>
+              <td>Уровень ригеля и высота горизонтального разреза</td>
+            </tr>
           </tbody>
         </table>
       </div>
-    </div>
-  </section>
+      <p class="note">Горизонтальную центровою плоскость ригеля задают на <strong>раме/модуле</strong>, а не внутри одного общего семейства профиля «на оба роли».</p>
 
-  <section class="section" id="planes">
-    <div class="wrap">
-      <h2>Опорные плоскости</h2>
-      <p>Одно семейство профиля для стойки и ригеля. Роль детали определяется расположением плоскости в модуле и её ориентацией.</p>
-      <div class="plane-diagram" style="margin-top: 16px;">
+      <h3 class="subhead">Для цепочек размеров</h3>
+      <p>Без этих плоскостей команда размеров не найдёт привязки.</p>
+      <div class="plane-diagram">
         <table>
           <thead>
-            <tr><th>Плоскость</th><th>Где задаётся</th><th>Назначение</th></tr>
+            <tr><th>Группа</th><th>Роли</th><th>Примеры имён</th></tr>
           </thead>
           <tbody>
             <tr>
-              <td>profil vertikalnyi centr</td>
-              <td>профиль (вложенный)</td>
-              <td>Вертикальный разрез → <strong>стойка</strong>, если плоскость перпендикулярна ширине модуля</td>
+              <td>Оболочка</td>
+              <td>верх / низ / лево / право</td>
+              <td><code>obolochka top</code>, <code>obolochka left</code></td>
             </tr>
             <tr>
-              <td>profil gorizontalnyi centr</td>
-              <td>рама / модуль</td>
-              <td>Уровень ригеля → высота горизонтального разреза</td>
+              <td>Профиль</td>
+              <td>края и центры</td>
+              <td><code>profil left</code>, <code>profil top</code>, <code>profil vertikalnyi centr</code></td>
+            </tr>
+            <tr>
+              <td>Закладная</td>
+              <td>края и центры, номер</td>
+              <td><code>zakladnaya 1 top</code>, <code>zakladnaya 1 gorizontalnyi centr</code></td>
+            </tr>
+            <tr>
+              <td>Икля</td>
+              <td>края и центры, номер</td>
+              <td><code>iklya 1 bottom</code>, <code>iklya 1 gorizontalnyi centr</code></td>
             </tr>
           </tbody>
         </table>
       </div>
-      <details style="margin-top: 16px;">
+
+      <details>
+        <summary>Правила именования и загрузки семейств</summary>
+        <ul>
+          <li>Латиница, нижний регистр, слова через пробел.</li>
+          <li>На рабочих плоскостях: «Является ссылкой» = Сильная.</li>
+          <li>После правок семейства: «Загрузить в проект» → «Перезаписать» по всей цепочке вложенных семейств.</li>
+          <li>Тип детали в имени (A, B, M16…) — только если на одном виде нужно размерять типы раздельно.</li>
+        </ul>
+      </details>
+
+      <details>
         <summary>Одно семейство профиля или два</summary>
-        <p><strong>Одно семейство</strong> — в ведомости одна строка на тип сечения (H20, H21…). Стойка или ригель определяются при выпуске листов.</p>
-        <p><strong>Два семейства</strong> — учёт одного проката дублируется, контроль усложняется. На скорость выпуска листов это не влияет.</p>
+        <p><strong>Одно семейство</strong> — в ведомости одна строка на тип сечения. Стойка или ригель определяются при выпуске листов по плоскости и ориентации.</p>
+        <p><strong>Два семейства</strong> — учёт одного проката дублируется. На скорость выпуска листов это не влияет.</p>
+      </details>
+
+      <details>
+        <summary>Как находятся стойки и ригели без плоскостей</summary>
+        <ol>
+          <li>Сначала — именованные плоскости (если есть).</li>
+          <li>Иначе — по габариту: стойка высокая и узкая; ригель длинный и низкий.</li>
+          <li>Если и того нет — запасной набор разрезов по габариту модуля.</li>
+        </ol>
       </details>
     </div>
   </section>
 
+  <!-- —— 3. Выпуск —— -->
+  <section class="section section-alt" id="sheets">
+    <div class="wrap">
+      <p class="section-kicker">Шаг 3 · выпуск</p>
+      <h2>Выпуск листов</h2>
+      <p class="lead-section">Команда на ленте: <strong>NORDFOX → Листы КМД</strong>.</p>
+
+      <ol class="steps">
+        <li>
+          <strong>Откройте фасад</strong>, с которого смотрите модуль (лицо панели на вас).
+        </li>
+        <li>
+          <strong>Выберите сценарий:</strong> лист модуля, лист панели или листы профилей.
+        </li>
+        <li>
+          <strong>Укажите один модуль</strong> на фасаде.
+        </li>
+        <li>
+          <strong>Проверьте шаблоны</strong> (подставляются по именам), формат листа, масштаб и глубину в основание.
+        </li>
+        <li>
+          При повторном запуске на том же модуле: <strong>заменить</strong> комплект или <strong>создать новый</strong>.
+        </li>
+      </ol>
+
+      <div class="grid-2" style="margin-top: 28px;">
+        <article class="card card-highlight">
+          <h3>Лист модуля (В9 / В20)</h3>
+          <ul>
+            <li>Фасад, вертикальные и горизонтальные разрезы, рама, изометрия</li>
+            <li>Число разрезов ≈ число стоек и уровней ригелей</li>
+            <li>Типовой и угловой модуль</li>
+          </ul>
+        </article>
+        <article class="card card-highlight">
+          <h3>Лист панели (В10 / В21)</h3>
+          <ul>
+            <li>Спереди и сзади, разрезы, изометрия</li>
+            <li>Только панель (рама на лист не попадает)</li>
+            <li>Не заменяет уже созданный лист модуля</li>
+          </ul>
+        </article>
+        <article class="card card-highlight">
+          <h3>Листы профилей (В11–В12 / В22–В25)</h3>
+          <ul>
+            <li>Стойки и ригели крупным планом</li>
+            <li>Обрезка вида по эталону</li>
+            <li>Угловые модули — раскладка по эталонам В22–В25</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Параметры в диалоге</h3>
+          <ul>
+            <li>Формат листа (A4…A0)</li>
+            <li>Масштаб видов</li>
+            <li>Глубина разреза в основание, мм</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="demo-inline" id="demo-views">
+        <div class="demo-block-head">
+          <span class="demo-num">1</span>
+          <div>
+            <h3>Видео: выпуск видов и листов</h3>
+            <p>Выбор модуля → сценарий → лист по эталону.</p>
+          </div>
+        </div>
+        <div class="video-mount" data-video-id="views"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- —— 4. Размеры —— -->
+  <section class="section" id="dimensions">
+    <div class="wrap">
+      <p class="section-kicker">Шаг 4 · после листов</p>
+      <h2>Цепочки размеров</h2>
+      <p class="lead-section">Отдельная команда. Работает на открытом виде модуля (не на листе). Нужны именованные плоскости в семействах.</p>
+
+      <ol class="steps">
+        <li>Откройте вид модуля (спереди / сбоку / сверху).</li>
+        <li><strong>NORDFOX → Цепочки размеров</strong>.</li>
+        <li>Выберите режим: <strong>края</strong>, <strong>центры</strong> или <strong>от базы</strong>.</li>
+        <li>Укажите базовый элемент и сторону вида.</li>
+        <li>При необходимости ограничьте тип детали (если в именах плоскостей задан тип).</li>
+      </ol>
+
+      <div class="plane-diagram" style="margin-top: 24px;">
+        <table>
+          <thead>
+            <tr><th>Режим</th><th>Какие плоскости</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Края</td><td>Края базы и краёв деталей (top / bottom / left / right)</td></tr>
+            <tr><td>Центры</td><td>Края базы + центровые плоскости деталей (… centr)</td></tr>
+            <tr><td>От базы</td><td>Выбранный край базы + центровые плоскости деталей</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="demo-inline" id="demo-dimensions">
+        <div class="demo-block-head">
+          <span class="demo-num">2</span>
+          <div>
+            <h3>Видео: цепочки размеров</h3>
+            <p>База → центры деталей на виде модуля.</p>
+          </div>
+        </div>
+        <div class="video-mount" data-video-id="dimensions"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- —— 5. Ориентация —— -->
+  <section class="section section-alt" id="orientation">
+    <div class="wrap">
+      <p class="section-kicker">Шаг 5 · при смене фасада</p>
+      <h2>Ориентация видов</h2>
+      <p class="lead-section">Поворот уже созданного вида. Лист не пересоздаётся — экономия на повторном выборе модуля, разрезах и скрытии деталей.</p>
+
+      <ol class="steps">
+        <li>Выберите видовой экран на листе или откройте вид комплекта.</li>
+        <li><strong>NORDFOX → Ориентация видов</strong>.</li>
+        <li>Поворот на 90° или 180° (для изометрии — орбита / разворот).</li>
+      </ol>
+
+      <div class="callout">
+        <h4>Когда хватает поворота, а когда нужна пересборка</h4>
+        <p><strong>Поворот</strong> — тот же модуль на другом фасаде, нужно развернуть кадр.</p>
+        <p><strong>Замена комплекта</strong> — добавились стойки или ригели, нужна новая схема разрезов, сбилась изоляция или обрезка вида.</p>
+      </div>
+
+      <div class="demo-inline" id="demo-orientation">
+        <div class="demo-block-head">
+          <span class="demo-num">3</span>
+          <div>
+            <h3>Видео: смена ориентации</h3>
+            <p>Поворот вида без пересборки листа.</p>
+          </div>
+        </div>
+        <div class="video-mount" data-video-id="orientation"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- —— 6. Контроль —— -->
+  <section class="section" id="check">
+    <div class="wrap">
+      <p class="section-kicker">Шаг 6 · после выпуска</p>
+      <h2>Контроль качества</h2>
+      <p class="lead-section">Надстройка собирает состав и раскладку; эталонный вид доводят в Revit.</p>
+
+      <ol class="steps">
+        <li>Масштаб видов совпадает с выбранным в диалоге.</li>
+        <li>Виды не выходят за ячейку листа — при необходимости сдвинуть на листе.</li>
+        <li>Лишние маркеры разрезов — отключить в видимости аннотаций.</li>
+        <li>Подписи 1-1, 2-2… — проставить вручную при необходимости.</li>
+        <li>На листах профилей — проверить крайние стойки и верхний / нижний ригель.</li>
+      </ol>
+
+      <details>
+        <summary>Анализ проекта (по желанию)</summary>
+        <p>Команда выгружает таблицу по модулям: сколько стоек и ригелей найдено, готовность к листам профилей. Удобно перед массовым выпуском.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- —— Видео-сводка —— -->
   <section class="section section-alt" id="demo">
     <div class="wrap">
-      <h2>Демонстрация</h2>
-      <p class="lead-section">Три коротких ролика по основным операциям. Каждый — отдельный блок: можно смотреть по порядку или перейти к нужному.</p>
-
-      <div class="demo-list">
-        <article class="demo-block" id="demo-views">
-          <div class="demo-block-head">
-            <span class="demo-num">1</span>
-            <div>
-              <h3>Выпуск видов и листов</h3>
-              <p>Модуль на фасаде → лист модуля, панели и профилей по эталону.</p>
-            </div>
-          </div>
-          <div class="video-mount" data-video-id="views"></div>
-        </article>
-
-        <article class="demo-block" id="demo-dimensions">
-          <div class="demo-block-head">
-            <span class="demo-num">2</span>
-            <div>
-              <h3>Цепочки размеров</h3>
-              <p>Размеры от базовой линии до центров деталей на виде модуля.</p>
-            </div>
-          </div>
-          <div class="video-mount" data-video-id="dimensions"></div>
-        </article>
-
-        <article class="demo-block" id="demo-orientation">
-          <div class="demo-block-head">
-            <span class="demo-num">3</span>
-            <div>
-              <h3>Смена ориентации вида</h3>
-              <p>Поворот вида на другой фасад без пересборки листа.</p>
-            </div>
-          </div>
-          <div class="video-mount" data-video-id="orientation"></div>
-        </article>
+      <h2>Видео — кратко</h2>
+      <p class="lead-section">Три ролика привязаны к шагам выше. Здесь — быстрый переход.</p>
+      <div class="grid-3">
+        <a class="card card-link" href="#demo-views">
+          <h3>1. Виды и листы</h3>
+          <p class="card-text">Выпуск комплекта по эталону</p>
+        </a>
+        <a class="card card-link" href="#demo-dimensions">
+          <h3>2. Размеры</h3>
+          <p class="card-text">Цепочки на виде модуля</p>
+        </a>
+        <a class="card card-link" href="#demo-orientation">
+          <h3>3. Ориентация</h3>
+          <p class="card-text">Поворот без пересборки</p>
+        </a>
       </div>
     </div>
   </section>
@@ -256,7 +483,7 @@
           <li>Парапет (МП-*, МПБ-*)</li>
           <li>Узкий (ПВ-1)</li>
         </ul>
-        <p style="margin-top: 12px; color: var(--muted);">Доработки — по мере поступления замечаний при выпуске. Массовый выпуск всех модулей одной командой пока не предусмотрен.</p>
+        <p class="note" style="margin-top: 12px;">Доработки — по замечаниям при выпуске. Массовый выпуск всех модулей одной командой пока не предусмотрен.</p>
       </div>
     </div>
   </section>
@@ -264,6 +491,7 @@
   <footer>
     <div class="wrap">
       <p>RevitViewPlace · <a href="https://nordfox.ru/">NORDFOX</a> · внутренний инструмент КМД</p>
+      <p class="footer-meta">Сайт: <a href="https://alexpror.github.io/revit_view_place_demo/">alexpror.github.io/revit_view_place_demo</a></p>
     </div>
   </footer>
 
