@@ -53,7 +53,7 @@
         link.href = src.openUrl;
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
-        link.textContent = 'Открыть на Яндекс.Диске';
+        link.textContent = 'Открыть видео';
         placeholder.appendChild(link);
       }
       root.appendChild(placeholder);
