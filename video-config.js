@@ -1,4 +1,5 @@
-// Демонстрации: openUrl + iframeSrc (Google Drive preview) или localUrl.
+// Демонстрации: localUrl (mp4 в репо) — как solid-dxf-demo.
+// Исходники на Drive; сжатые копии в video/*.mp4.
 window.REVITVIEWPLACE_DEMO_VIDEOS = [
   // Пока без роликов — раскомментировать, когда будут файлы:
   // {
@@ -21,24 +22,24 @@ window.REVITVIEWPLACE_DEMO_VIDEOS = [
     id: 'views',
     title: 'Выпуск видов и листов',
     lead: 'Выбор модуля → лист модуля, панели и профилей.',
+    localUrl: 'video/views.mp4',
     openUrl: 'https://drive.google.com/file/d/1KsUpUE6rO7ywCYD1Uh7jpRFFmZgQemiX/view?usp=drive_link',
-    iframeSrc: 'https://drive.google.com/file/d/1KsUpUE6rO7ywCYD1Uh7jpRFFmZgQemiX/preview',
-    localUrl: ''
+    iframeSrc: ''
   },
   {
     id: 'dimensions',
     title: 'Цепочки размеров',
     lead: 'Размеры от базы до центров деталей.',
+    localUrl: 'video/dimensions.mp4',
     openUrl: 'https://drive.google.com/file/d/1QlRdHe7XBzTTMdnpd-2FhaRRy3NKj6T6/view?usp=drive_link',
-    iframeSrc: 'https://drive.google.com/file/d/1QlRdHe7XBzTTMdnpd-2FhaRRy3NKj6T6/preview',
-    localUrl: ''
+    iframeSrc: ''
   },
   {
     id: 'orientation',
     title: 'Смена ориентации вида',
     lead: 'Крест стрелок и угол 90/180/270° — на видах плагина и обычных.',
+    localUrl: 'video/orientation.mp4',
     openUrl: 'https://drive.google.com/file/d/1UW1RK2ZGtN6KPsDjNmeSW2--o6PqQM_Z/view?usp=drive_link',
-    iframeSrc: 'https://drive.google.com/file/d/1UW1RK2ZGtN6KPsDjNmeSW2--o6PqQM_Z/preview',
-    localUrl: ''
+    iframeSrc: ''
   }
 ];
