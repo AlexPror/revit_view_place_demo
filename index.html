@@ -316,7 +316,9 @@
       <div class="callout">
         <h4>Как читать имя плоскости</h4>
         <p>Формат: <strong>группа</strong> → при необходимости <strong>тип</strong> → при необходимости <strong>номер</strong> → <strong>роль</strong>.</p>
-        <p>Примеры: <code>zakladnaya top</code> · <code>zakladnaya zacep top</code> · <code>zakladnaya A 1 top</code>.</p>
+        <p><strong>Тип</strong> — любое слово, которое не является числом: буква <code>A</code>, слово <code>zacep</code>, <code>M16</code>. Это одно и то же поле: оно попадает в список «Тип» в диалоге размеров и <strong>меняет цепь</strong>.</p>
+        <p><strong>Номер</strong> — только цифры (<code>1</code>, <code>2</code>…). Это порядок деталей в семействе, <strong>не отдельный тип</strong> и не фильтр в диалоге.</p>
+        <p>Примеры: <code>zakladnaya top</code> (без типа и номера) · <code>zakladnaya zacep top</code> (тип = zacep) · <code>zakladnaya A 1 top</code> (тип = A, номер = 1).</p>
         <p>Плагин смотрит <strong>имя плоскости</strong>, а не имя семейства Revit. Группы в каноне только четыре: оболочка, профиль, закладная, икля.</p>
       </div>
 
@@ -331,20 +333,28 @@
         <h3 class="table-caption">Тип и номер в имени — когда нужны</h3>
         <table>
           <thead>
-            <tr><th>В имени</th><th>Зачем</th></tr>
+            <tr><th>Что в имени</th><th>Это</th><th>Влияние на цепь</th></tr>
           </thead>
           <tbody>
             <tr>
               <td><code>zakladnaya top</code></td>
-              <td>Базовый вариант. Достаточно, если на выбранной стороне вида меряете один набор деталей одной группой.</td>
+              <td>Только группа + роль</td>
+              <td>Одна общая цепь «закладные» на выбранной стороне.</td>
             </tr>
             <tr>
-              <td><code>zakladnaya zacep top</code> или <code>zakladnaya A top</code></td>
-              <td><strong>Тип</strong> — отдельная цепь в диалоге (поле «Тип»). Нужен, когда на одной стороне и закладные, и зацепы (или два разных типа) с похожими ролями.</td>
+              <td><code>zakladnaya 1 top</code>, <code>zakladnaya 2 top</code></td>
+              <td><strong>Номер</strong> — визуальный порядок одинаковых деталей</td>
+              <td>Не отделяет цепи. При типе «все» в одну цепь попадут и 1, и 2.</td>
             </tr>
             <tr>
-              <td><code>zakladnaya 1 top</code></td>
-              <td><strong>Номер</strong> — для порядка в семействе с несколькими одинаковыми деталями. Сам по себе <strong>не включает</strong> отдельный фильтр в UI: при типе «все» номера 1 и 2 попадут в одну цепь.</td>
+              <td><code>zakladnaya A top</code> или <code>zakladnaya zacep top</code></td>
+              <td><strong>Тип</strong> — буква или слово (одно и то же)</td>
+              <td>Появляется в поле «Тип». Можно собрать отдельную цепь: только A или только zacep.</td>
+            </tr>
+            <tr>
+              <td><code>zakladnaya zacep 1 top</code></td>
+              <td>Тип + номер вместе</td>
+              <td>Цепь фильтруется по <code>zacep</code>; цифра 1 только отличает экземпляры внутри типа.</td>
             </tr>
           </tbody>
         </table>
