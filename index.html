@@ -62,7 +62,8 @@
           <a href="#prepare">Подготовка</a>
           <a href="#planes">Плоскости</a>
           <a href="#sheets">Выпуск</a>
-          <a href="#dimensions">Размеры</a>
+          <a href="#dimensions">Размеры КМД</a>
+          <a href="#km">Размеры КМ</a>
           <a href="#orientation">Ориентация</a>
           <a href="#check">Контроль</a>
           <a href="#demo">Видео</a>
@@ -149,7 +150,7 @@
           <code>%ProgramData%\Autodesk\Revit\Addins\2022</code>
           (или <code>…\2021</code>) → Enter.
         </li>
-        <li>Запустите Revit. На ленте: вкладка <strong>NORDFOX</strong> → панель View Place.</li>
+        <li>Запустите Revit. На ленте вкладка <strong>NORDFOX</strong>: Листы КМД, Правка видов, <strong>КМ</strong>, Оформление.</li>
       </ol>
 
       <div class="plane-diagram" style="margin-top: 28px;">
@@ -186,14 +187,15 @@
   <section class="section" id="guide">
     <div class="wrap">
       <h2>Инструкция: настройка и применение</h2>
-      <p class="lead-section">Сначала устанавливают надстройку, затем один раз готовят проект (шаблоны и плоскости). На каждом модуле — выпуск листов, размеры и при необходимости поворот вида.</p>
+      <p class="lead-section">Сначала устанавливают надстройку, затем один раз готовят проект (шаблоны и плоскости). На каждом модуле — выпуск листов, размеры КМД, размеры КМ и при необходимости поворот вида.</p>
 
       <ol class="guide-toc">
         <li><a href="#install"><strong>Установка</strong></a> — DLL и .addin в папку Addins</li>
         <li><a href="#prepare"><strong>Подготовка проекта</strong></a> — шаблоны видов, основная надпись, лента NORDFOX</li>
         <li><a href="#planes"><strong>Опорные плоскости</strong></a> — для разрезов и для размеров</li>
         <li><a href="#sheets"><strong>Выпуск листов</strong></a> — модуль, панель, профили</li>
-        <li><a href="#dimensions"><strong>Цепочки размеров</strong></a> — после выпуска видов</li>
+        <li><a href="#dimensions"><strong>Цепочки размеров КМД</strong></a> — после выпуска видов модуля</li>
+        <li><a href="#km"><strong>Размеры КМ</strong></a> — кронштейны, оси и уровни по линии</li>
         <li><a href="#orientation"><strong>Ориентация видов</strong></a> — без пересборки листа</li>
         <li><a href="#check"><strong>Контроль после выпуска</strong></a> — что правит Revit вручную</li>
       </ol>
@@ -201,7 +203,8 @@
       <div class="callout">
         <h4>Главное правило</h4>
         <p>Для <strong>выпуска листов</strong> обновлять семейства с опорными плоскостями <strong>не обязательно</strong>: надстройка находит стойки и ригели по геометрии профилей.</p>
-        <p>Для <strong>цепочек размеров</strong> именованные плоскости в семействах <strong>нужны</strong>.</p>
+        <p>Для <strong>цепочек размеров КМД</strong> именованные плоскости в семействах <strong>нужны</strong>.</p>
+        <p>Для <strong>размеров КМ</strong> в семействе кронштейна нужны <code>kronshtein plane</code> (боковая) и/или <code>kronshtein … centr</code>.</p>
       </div>
     </div>
   </section>
@@ -246,7 +249,11 @@
         </article>
         <article class="card">
           <h3>Цепочки размеров</h3>
-          <p class="card-text">Простановка размеров по именованным плоскостям на открытом виде.</p>
+          <p class="card-text">КМД: размеры по именованным плоскостям на открытом виде модуля.</p>
+        </article>
+        <article class="card">
+          <h3>Размеры КМ</h3>
+          <p class="card-text">Кронштейны: линия выбора ∩ плоскости, оси и уровни. Панель <strong>КМ</strong>.</p>
         </article>
         <article class="card">
           <h3>Ориентация видов</h3>
@@ -338,10 +345,13 @@
             <tr><td><code>petlya bottom</code></td><td>петли</td><td>Размеры: край</td></tr>
             <tr><td><code>petlya gorizontalnyi centr</code></td><td>петли</td><td>Размеры: центр</td></tr>
             <tr><td><code>petlya vertikalnyi centr</code></td><td>петли</td><td>Размеры: центр</td></tr>
+            <tr><td><code>kronshtein plane</code></td><td>кронштейн (КМ)</td><td>Размеры КМ: одна боковая</td></tr>
+            <tr><td><code>kronshtein vertikalnyi centr</code></td><td>кронштейн (КМ)</td><td>Размеры КМ: центр (гориз. линия)</td></tr>
+            <tr><td><code>kronshtein gorizontalnyi centr</code></td><td>кронштейн (КМ)</td><td>Размеры КМ: центр (верт. линия)</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="note">Для листов достаточно пары <code>profil vertikalnyi centr</code> (на стойке) + <code>profil gorizontalnyi centr</code> (на раме/модуле). Без них листы всё равно выходят по геометрии. Для профилей буквы и номера в имени обычно не нужны.</p>
+      <p class="note">Для листов достаточно пары <code>profil vertikalnyi centr</code> (на стойке) + <code>profil gorizontalnyi centr</code> (на раме/модуле). Без них листы всё равно выходят по геометрии. Для профилей буквы и номера в имени обычно не нужны. Кронштейны (<code>kronshtein …</code>) — только команда <strong>Размеры КМ</strong>, в «Все детали» КМД не входят.</p>
 
       <div class="callout">
         <h4>Как читать имя плоскости</h4>
@@ -349,13 +359,13 @@
         <p><strong>Тип</strong> — любое слово, которое не является числом: буква <code>A</code>, слово <code>M16</code>. Каждая такая подпись — <strong>свой тип</strong> в списке «Тип» диалога размеров.</p>
         <p><strong>Номер</strong> — только цифры (<code>1</code>, <code>2</code>…). Порядок деталей в семействе, <strong>не отдельный тип</strong> и не фильтр в диалоге.</p>
         <p>Примеры: <code>zakladnaya top</code> · <code>zacep A top</code> · <code>shpora 1 gorizontalnyi centr</code> · <code>petlya M16 2 top</code>.</p>
-        <p>Плагин смотрит <strong>имя плоскости</strong>, а не имя семейства Revit. Группы деталей: закладные, шпоры, зацепы, профили, икли, соединители, петли.</p>
+        <p>Плагин смотрит <strong>имя плоскости</strong>, а не имя семейства Revit. Группы деталей КМД: закладные, шпоры, зацепы, профили, икли, соединители, петли. Кронштейны (<code>kronshtein</code>) — отдельная команда <strong>Размеры КМ</strong>.</p>
       </div>
 
       <div class="callout" style="margin-top: 16px;">
         <h4>Соответствие: UI ↔ префикс</h4>
         <p>В команде размеров выбираете группу — ищутся плоскости с тем же префиксом. Пункт <strong>Все детали</strong> берёт сразу все префиксы ниже (кроме профиля) в одну цепь вместе с краями оболочки.</p>
-        <p><code>zakladnaya</code> · <code>shpora</code> · <code>zacep</code> · <code>iklya</code> · <code>soedinitel</code> · <code>petlya</code> · отдельно <code>profil</code></p>
+        <p><code>zakladnaya</code> · <code>shpora</code> · <code>zacep</code> · <code>iklya</code> · <code>soedinitel</code> · <code>petlya</code> · отдельно <code>profil</code> · КМ: <code>kronshtein</code></p>
         <p>Новая деталь с уже существующим префиксом не требует пересборки плагина. Новый префикс в имени — только после обновления надстройки с новой группой в UI.</p>
       </div>
 
@@ -495,16 +505,16 @@
     </div>
   </section>
 
-  <!-- —— 4. Размеры —— -->
+  <!-- —— 4. Размеры КМД —— -->
   <section class="section" id="dimensions">
     <div class="wrap">
       <p class="section-kicker">Шаг 4 · после листов</p>
-      <h2>Цепочки размеров</h2>
-      <p class="lead-section">Отдельная команда. Работает на открытом виде модуля (не на листе). Нужны именованные плоскости в семействах. В группе можно выбрать одну деталь или <strong>Все детали</strong> (оболочка + закладные/шпоры/зацепы/икли/соединители/петли в одной цепи). Профили — отдельно. См. <a href="#planes">опорные плоскости</a>.</p>
+      <h2>Цепочки размеров КМД</h2>
+      <p class="lead-section">Отдельная команда на панели <strong>Правка видов</strong>. Работает на открытом виде модуля (не на листе). Нужны именованные плоскости в семействах. В группе можно выбрать одну деталь или <strong>Все детали</strong> (оболочка + закладные/шпоры/зацепы/икли/соединители/петли в одной цепи). Профили — отдельно. Кронштейны сюда не входят — см. <a href="#km">размеры КМ</a>. См. <a href="#planes">опорные плоскости</a>.</p>
 
       <ol class="steps">
         <li>Откройте вид модуля (спереди / сбоку / сверху).</li>
-        <li><strong>NORDFOX → Цепочки размеров</strong>.</li>
+        <li><strong>NORDFOX → Правка видов → Цепочка размеров</strong>.</li>
         <li>Выберите режим: <strong>края</strong>, <strong>центры</strong> или <strong>от базы</strong>.</li>
         <li>Укажите базовый элемент и сторону вида.</li>
         <li>При необходимости ограничьте тип детали (если в именах плоскостей задан тип).</li>
@@ -536,10 +546,46 @@
     </div>
   </section>
 
-  <!-- —— 5. Ориентация —— -->
-  <section class="section section-alt" id="orientation">
+  <!-- —— 5. Размеры КМ —— -->
+  <section class="section section-alt" id="km">
     <div class="wrap">
-      <p class="section-kicker">Шаг 5 · при смене фасада</p>
+      <p class="section-kicker">Шаг 5 · схема кронштейнов</p>
+      <h2>Размеры КМ</h2>
+      <p class="lead-section">Отдельная панель <strong>КМ</strong>, синие иконки. Не путать с «Цепочка размеров» на «Правка видов» (то КМД). Работает на открытом <strong>фасаде или разрезе</strong>, не на листе. Линия выбирает опоры; клик в любом месте чертежа задаёт сторону и высоту выноса.</p>
+
+      <ol class="steps">
+        <li>Откройте фасад или разрез схемы кронштейнов (не лист).</li>
+        <li><strong>NORDFOX → КМ → Размеры КМ</strong>.</li>
+        <li>Семейство кронштейна (категория «Каркас несущий»), плоскость <strong>Боковая</strong> или <strong>Центр</strong>, тип размера <strong>«Размеры кронштейнов б/м»</strong>.</li>
+        <li><strong>Шаг 1/3.</strong> Укажите начало линии выбора. <strong>Шаг 2/3.</strong> Укажите конец. В цепь входят пересечённые плоскости кронштейна, оси и уровни.</li>
+        <li><strong>Шаг 3/3.</strong> Укажите любую точку на чертеже — сторона и высота выноса. Без привязки к оси, уровню или плоскости.</li>
+      </ol>
+
+      <div class="plane-diagram" style="margin-top: 24px;">
+        <table>
+          <thead>
+            <tr><th>Режим</th><th>Плоскость в семействе</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Боковая</td><td><code>kronshtein plane</code> — одна на экземпляр</td></tr>
+            <tr><td>Центр</td><td><code>kronshtein vertikalnyi centr</code> / <code>kronshtein gorizontalnyi centr</code> — по направлению линии</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout" style="margin-top: 16px;">
+        <h4>Как читать цепь</h4>
+        <p>Одна линия выбора = одна цепь. Горизонтальная линия на фасаде ловит вертикальные оси; вертикальная — уровни. Низ по осям — второй запуск.</p>
+        <p>Размерная линия проходит через указанную точку и доводится до крайних кронштейнов. Короткие сегменты (примерно 180 / 300 мм) выносятся на полку; шаг ряда остаётся на линии.</p>
+        <p>Если в семье нет <code>kronshtein plane</code>, режим «Боковая» не найдёт кронштейны — используйте «Центр» или добавьте плоскость в <code>.rfa</code> («Является ссылкой» = Сильная, затем «Загрузить в проект» → «Перезаписать»).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- —— 6. Ориентация —— -->
+  <section class="section" id="orientation">
+    <div class="wrap">
+      <p class="section-kicker">Шаг 6 · при смене фасада</p>
       <h2>Ориентация видов</h2>
       <p class="lead-section">Крест стрелок и угол из списка (90° по умолчанию, также 180° и 270°). Лист не пересоздаётся. Работает на видах комплекта плагина и на обычных видах / эталонах Revit.</p>
 
@@ -569,10 +615,10 @@
     </div>
   </section>
 
-  <!-- —— 6. Контроль —— -->
+  <!-- —— 7. Контроль —— -->
   <section class="section" id="check">
     <div class="wrap">
-      <p class="section-kicker">Шаг 6 · после выпуска</p>
+      <p class="section-kicker">Шаг 7 · после выпуска</p>
       <h2>Контроль качества</h2>
       <p class="lead-section">Надстройка собирает состав и раскладку; эталонный вид доводят в Revit.</p>
 
@@ -582,6 +628,7 @@
         <li>Лишние маркеры разрезов — отключить в видимости аннотаций.</li>
         <li>Подписи 1-1, 2-2… — проставить вручную при необходимости.</li>
         <li>На листах профилей — проверить крайние стойки и верхний / нижний ригель.</li>
+        <li>Размеры КМ ставятся с открытого фасада/разреза, не с листа.</li>
       </ol>
 
       <details>
@@ -613,8 +660,12 @@
           <p class="card-text">Выпуск комплекта</p>
         </a>
         <a class="card card-link" href="#demo-dimensions">
-          <h3>Размеры</h3>
-          <p class="card-text">Цепочки на виде</p>
+          <h3>Размеры КМД</h3>
+          <p class="card-text">Цепочки на виде модуля</p>
+        </a>
+        <a class="card card-link" href="#km">
+          <h3>Размеры КМ</h3>
+          <p class="card-text">Линия ∩ кронштейны, оси, уровни</p>
         </a>
         <a class="card card-link" href="#demo-orientation">
           <h3>Ориентация</h3>
@@ -648,7 +699,7 @@
 
   <footer>
     <div class="wrap">
-      <p>RevitViewPlace · <a href="https://nordfox.ru/">NORDFOX</a> · внутренний инструмент КМД</p>
+      <p>RevitViewPlace · <a href="https://nordfox.ru/">NORDFOX</a> · внутренний инструмент КМД и КМ</p>
       <p class="footer-meta">Сайт: <a href="https://alexpror.github.io/revit_view_place_demo/">alexpror.github.io/revit_view_place_demo</a></p>
     </div>
   </footer>
