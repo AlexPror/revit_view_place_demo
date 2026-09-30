@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>КМ — размеры и маркировка кассет · NORDFOX</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="page-km">
+
+  <header class="site-header">
+    <div class="pilot-banner">Пилот · Revit 2021/2022 · панель КМ · размеры кронштейнов и маркировка кассет</div>
+    <nav class="site-nav">
+      <div class="wrap site-nav-inner">
+        <a class="site-brand" href="index.html">RevitViewPlace</a>
+        <a class="site-nav-cta" href="index.html#install">Установка</a>
+      </div>
+    </nav>
+    <nav class="site-tabs" aria-label="Разделы сайта">
+      <div class="wrap site-tabs-inner site-tabs-3">
+        <a class="tab-setup" href="index.html">
+          <span class="tab-name">Настройка</span>
+          <span class="tab-desc">Установка и проект</span>
+        </a>
+        <a class="tab-kmd" href="kmd.html">
+          <span class="tab-name">КМД</span>
+          <span class="tab-desc">Команды листов и видов</span>
+        </a>
+        <a class="tab-km is-current" href="km.html" aria-current="page">
+          <span class="tab-name">КМ</span>
+          <span class="tab-desc">Кронштейны и марки кассет</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow">Лента NORDFOX → панель <strong>КМ</strong> · синие иконки</p>
+      <h1>КМ: кронштейны и кассеты</h1>
+      <p class="lead">Размеры кронштейнов по линии на фасаде и маркировка алюминиевых кассет. Установка — на странице <a href="index.html" style="color:#fff;opacity:.9">Настройка</a>. Листы КМД и «Цепочка размеров» — на <a href="kmd.html" style="color:#fff;opacity:.9">КМД</a>.</p>
+    </div>
+  </section>
+
+  <div class="doc-shell">
+    <div class="wrap doc-layout">
+      <aside class="doc-toc" aria-label="Команды КМ">
+        <p class="doc-toc-title">Две команды</p>
+        <nav class="doc-toc-nav toc-cmd toc-cmd-dims">
+          <p class="toc-cmd-label"><a href="#cmd-dims">Размеры КМ</a></p>
+          <a href="#dims">Как ставить</a>
+          <a href="#planes">Плоскости кронштейна</a>
+        </nav>
+        <nav class="doc-toc-nav toc-cmd toc-cmd-marks">
+          <p class="toc-cmd-label"><a href="#cmd-marks">Марки кассет</a></p>
+          <a href="#mark">Марка на фасаде</a>
+          <a href="#colors">Карта цветов</a>
+          <a href="#unique">Уникальность</a>
+          <a href="#plugin">Окно плагина</a>
+          <a href="#families">Семейство и тип</a>
+        </nav>
+      </aside>
+      <div class="doc-main">
+
+  <div class="cmd-block cmd-block-dims" id="cmd-dims">
+    <header class="cmd-block-head">
+      <p class="cmd-block-kicker">NORDFOX → КМ</p>
+      <p class="cmd-block-title">Команда «Размеры КМ»</p>
+      <p class="cmd-block-lead">Одна кнопка. Ниже — как ставить цепь и какие плоскости нужны в семействе кронштейна.</p>
+    </header>
+
+  <section class="section section-alt" id="dims">
+    <div class="section-inner">
+      <p class="section-kicker">Команда · фасад или разрез</p>
+      <h2>Размеры КМ</h2>
+      <p class="lead-section">Кнопка <strong>Размеры КМ</strong>. Работает на открытом фасаде или разрезе, не на листе. Линия выбирает опоры; клик в любом месте чертежа задаёт сторону и высоту выноса.</p>
+
+      <ol class="steps">
+        <li>Откройте фасад или разрез схемы кронштейнов (не лист).</li>
+        <li><strong>NORDFOX → КМ → Размеры КМ</strong>.</li>
+        <li><strong>Все семейства</strong> (или одна семья кронштейна на этом виде), плоскость <strong>Боковая</strong> или <strong>Центр</strong>, стиль <strong>«Размеры кронштейнов б/м»</strong> (без масштаба). В списке только кронштейны вида, не зацепы и шпоры.</li>
+        <li><strong>Шаг 1–2.</strong> Начало и конец линии выбора. В цепь входят пересечённые плоскости кронштейна, оси и уровни.</li>
+        <li><strong>Шаг 3.</strong> Любая точка на чертеже — сторона и высота выноса. Без привязки клика к оси, уровню или плоскости.</li>
+      </ol>
+
+      <div class="callout" style="margin-top: 20px;">
+        <h4>Как читать цепь</h4>
+        <p>Одна линия выбора = одна цепь. Горизонтальная линия на фасаде ловит вертикальные оси; вертикальная — уровни. Низ по осям — второй запуск.</p>
+        <p>Размерная линия проходит через указанную точку и доводится до крайних кронштейнов. Короткие сегменты (примерно 180 / 300 мм) выносятся на полку; длинный шаг остаётся на линии.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="planes">
+    <div class="section-inner">
+      <p class="section-kicker">Семейство кронштейна · .rfa</p>
+      <h2>Плоскости для размеров КМ</h2>
+      <p class="lead-section">Плагин ищет <strong>имя плоскости</strong>, не имя семейства Revit. Латиница, нижний регистр, слова через пробел. «Является ссылкой» = Сильная. После правок: «Загрузить в проект» → «Перезаписать».</p>
+
+      <div class="plane-diagram">
+        <table>
+          <thead>
+            <tr><th>Режим в диалоге</th><th>Имя в семействе</th><th>Когда нужна</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Боковая</td>
+              <td><code>kronshtein plane</code></td>
+              <td>Одна боковая плоскость на экземпляр. Без left/right.</td>
+            </tr>
+            <tr>
+              <td>Центр</td>
+              <td><code>kronshtein vertikalnyi centr</code></td>
+              <td>Горизонтальная линия выбора (центры по вертикали).</td>
+            </tr>
+            <tr>
+              <td>Центр</td>
+              <td><code>kronshtein gorizontalnyi centr</code></td>
+              <td>Вертикальная линия выбора (центры по горизонтали).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout" style="margin-top: 16px;">
+        <h4>Что входит в цепь</h4>
+        <p>Только то, что пересекла линия: именованные <code>kronshtein …</code>, оси и уровни. Не грани, не рёбра, не габарит.</p>
+        <p><strong>Все семейства</strong> — все кронштейны вида в одной цепи. Одна семья сужает цепь. Типы внутри семьи не разделяются.</p>
+        <p>Если в семье нет <code>kronshtein plane</code>, режим «Боковая» кронштейны не найдёт — используйте «Центр» или добавьте плоскость.</p>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /.cmd-block-dims -->
+
+  <div class="cmd-block cmd-block-marks" id="cmd-marks">
+    <header class="cmd-block-head">
+      <p class="cmd-block-kicker">NORDFOX → КМ</p>
+      <p class="cmd-block-title">Команда «Марки кассет»</p>
+      <p class="cmd-block-lead">Другая кнопка на той же панели. Формат марки, цвета, уникальность и окно плагина.</p>
+    </header>
+
+  <section class="section section-alt" id="mark">
+    <div class="section-inner">
+      <p class="section-kicker">Кассета на фасаде</p>
+      <h2>Маркировка кассет</h2>
+      <p class="lead-section">На кассете и на чертеже фасада один код. На объекте берут изделие с наклейкой и вешают туда, где этот код на фасаде. Параметр <strong><code>FSD_Марка_Панель</code></strong> — строка <strong>типа</strong>, не экземпляра. Имя типа Revit в марку не пишут.</p>
+
+      <div class="mark-formula" aria-label="Формат марки">
+        <span class="mark-part mark-part-color">G</span>
+        <span class="mark-part mark-part-cfg">1</span>
+        <span class="mark-part mark-part-lr">L</span>
+        <span class="mark-sep">-</span>
+        <span class="mark-part mark-part-size">2</span>
+        <span class="mark-part mark-part-rd">Rd</span>
+      </div>
+      <p class="mark-formula-caption"><code>{цвет}{конфиг}[L|R]-{типоразмер}[Rd]</code> · примеры: <code>G1-1</code>, <code>S3L-1</code>, <code>T5R-10</code>, <code>G6-1Rd</code></p>
+
+      <div class="plane-diagram" style="margin-top: 24px;">
+        <table>
+          <thead>
+            <tr><th>Часть</th><th>Что кодирует</th><th>Когда меняется</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Буква</td>
+              <td>Цвет листа (RAL материала)</td>
+              <td>Другой RAL</td>
+            </tr>
+            <tr>
+              <td>Цифра после буквы</td>
+              <td>Форма изделия: борты, углы, вырубка, откос, выточка 45°, наклон</td>
+              <td>Другое изделие</td>
+            </tr>
+            <tr>
+              <td><code>L</code> / <code>R</code></td>
+              <td>Левая / правая, если кассету нельзя развернуть</td>
+              <td>Асимметрия. У симметричных буквы нет</td>
+            </tr>
+            <tr>
+              <td>После дефиса</td>
+              <td>Габарит (Ш×В) и раскладка рёбер</td>
+              <td>Другой размер или другие рёбра при <strong>том же</strong> изделии</td>
+            </tr>
+            <tr>
+              <td><code>Rd</code> справа</td>
+              <td>Радиусная кассета</td>
+              <td>Только радиус. Не в левой половине</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">Порядок цифр конфигурации свободный. «1» обычно самая частая плоская. Одинаковое производство — один номер. Производство читает левую часть (какое изделие), правую — размер и рёбра.</p>
+    </div>
+  </section>
+
+  <section class="section" id="colors">
+    <div class="section-inner">
+      <p class="section-kicker">Буква ← RAL материала</p>
+      <h2>Карта цветов</h2>
+      <p class="lead-section">Отдельного параметра «G / T / B / S» нет. Буква берётся из RAL в материале типа (<code>Алюминий RAL ####</code>) или из имени типа. Карта — с пилотного объекта. Новый RAL — новая строка, букву не угадывать.</p>
+
+      <div class="color-map">
+        <article class="color-card">
+          <div class="color-swatch" style="background:#8D9295" title="RAL 7045"></div>
+          <div class="color-body">
+            <p class="color-letter">G</p>
+            <p class="color-ral">RAL 7045</p>
+            <p class="color-name">Алюминий RAL 7045</p>
+            <p class="color-ex">G1-1 · G1-2 · G6-1Rd</p>
+          </div>
+        </article>
+        <article class="color-card">
+          <div class="color-swatch" style="background:#7B5141" title="RAL 8002"></div>
+          <div class="color-body">
+            <p class="color-letter">T</p>
+            <p class="color-ral">RAL 8002</p>
+            <p class="color-name">Алюминий RAL 8002</p>
+            <p class="color-ex">T5L-10 · T11-1</p>
+          </div>
+        </article>
+        <article class="color-card">
+          <div class="color-swatch color-swatch-dark" style="background:#0A0A0A" title="RAL 9005"></div>
+          <div class="color-body">
+            <p class="color-letter">B</p>
+            <p class="color-ral">RAL 9005</p>
+            <p class="color-name">Алюминий RAL 9005</p>
+            <p class="color-ex">B2-2 · B6-8</p>
+          </div>
+        </article>
+        <article class="color-card">
+          <div class="color-swatch color-swatch-light" style="background:#F6F6F6" title="RAL 9016"></div>
+          <div class="color-body">
+            <p class="color-letter">S</p>
+            <p class="color-ral">RAL 9016</p>
+            <p class="color-name">Алюминий RAL 9016</p>
+            <p class="color-ex">S3L-1 · S7-1</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="unique">
+    <div class="section-inner">
+      <p class="section-kicker">Один тип — одна марка</p>
+      <h2>Правила уникальности</h2>
+      <p class="lead-section">Марка живёт на <strong>типе</strong> Revit. Все экземпляры типа её наследуют. Одинаковые кассеты в разных местах фасада — одна и та же марка, сколько угодно раз.</p>
+
+      <div class="plane-diagram">
+        <table>
+          <thead>
+            <tr><th>Ситуация</th><th>Марка</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>То же изделие, тот же размер и рёбра</td>
+              <td>Та же марка: <code>G1-1</code> на всех таких кассетах</td>
+            </tr>
+            <tr>
+              <td>Другое изделие (борты, угол, вырубка…)</td>
+              <td>Другая левая часть: <code>G1</code> ≠ <code>G2</code> ≠ <code>S3</code></td>
+            </tr>
+            <tr>
+              <td>То же изделие, другой Ш×В или другие рёбра</td>
+              <td>Та же левая часть, другой номер: <code>G1-1</code> ≠ <code>G1-2</code></td>
+            </tr>
+            <tr>
+              <td>Та же кассета, но радиус</td>
+              <td>Тот же код + <code>Rd</code> справа: <code>G6-1Rd</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout note-callout" style="margin-top: 16px;">
+        <h4>Коллизия</h4>
+        <p>Одна марка на двух разных формах — ошибка. Например, код <code>S7-1</code> стоит и у поясной кассеты, и у угловой другого размера: на фасаде рядом два разных изделия с одним кодом.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="plugin">
+    <div class="section-inner">
+      <p class="section-kicker">NORDFOX → КМ → Марки кассет</p>
+      <h2>Как работает команда</h2>
+      <p class="lead-section">Одна кнопка на панели <strong>КМ</strong>, рядом с «Размеры КМ». Не две команды «с нуля» и «проверить»: плагин всегда сначала читает, что уже стоит, и только потом предлагает запись. Окно не блокирует Revit — фасад остаётся на экране.</p>
+
+      <ol class="steps">
+        <li>Откройте фасад, разрез или лист с фасадом. <strong>NORDFOX → КМ → Марки кассет</strong>.</li>
+        <li>Плагин собирает кассеты вида, сравнивает <code>FSD_Марка_Панель</code> с правилами и красит фасад по состоянию (красный / оранжевый / жёлтый / цвет RAL).</li>
+        <li>В списке — только типы. Пустые и ошибки отмечены, у каждой строки есть <strong>новая марка</strong> и <strong>место</strong> на фасаде (отметка, этаж, номер в ряду).</li>
+        <li>Проверьте цифру конфигурации. При необходимости поправьте новую марку.</li>
+        <li><strong>Применить выбранные</strong> — запись на тип. Верные марки без галочки не трогает. Запись на тип действует на все экземпляры в проекте.</li>
+      </ol>
+
+      <div class="callout" style="margin-top: 20px;">
+        <h4>Два случая — один экран</h4>
+        <p><strong>С нуля.</strong> Марки пустые. Плагин ставит букву по RAL, L/R и <code>Rd</code> по геометрии, номера — по кластерам изделий и размерам. Вы подтверждаете цифру конфигурации и жмёте «Применить выбранные».</p>
+        <p><strong>Проверка.</strong> Марки уже есть. Список по умолчанию показывает только проблемы: нет марки, задвоение, буква не по карте RAL. У каждой — новая марка, что поставить вместо ошибки. Ок-строки скрыты, пока не включите «Все».</p>
+      </div>
+
+      <h3 class="subhead">Окно команды</h3>
+      <p class="note" style="margin-top:0">Счётчики и таблица на фасаде. Окраска: нет марки — красный, задвоение — оранжевый, буква не по карте — жёлтый, ок — по цвету RAL.</p>
+
+      <div class="ui-mock">
+        <div class="ui-mock-bar">
+          <span>Марки кассет</span>
+          <span class="ui-mock-scope">Вид: этот фасад</span>
+        </div>
+        <p class="ui-mock-stats"><strong>14</strong> нет марки · <strong>2</strong> задвоения · <strong>1</strong> буква≠RAL · <strong>280</strong> ок</p>
+        <div class="plane-diagram ui-mock-table">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Состояние</th>
+                <th>Марка</th>
+                <th>Новая марка</th>
+                <th>Почему</th>
+                <th>Шт.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>☑</td>
+                <td><span class="st-pill st-empty">нет марки</span></td>
+                <td>—</td>
+                <td><code>T12-1</code></td>
+                <td>Пустой тип, RAL 8002</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>☑</td>
+                <td><span class="st-pill st-dup">задвоение</span></td>
+                <td><code>S7-1</code></td>
+                <td><code>S8-1</code></td>
+                <td>Та же марка у другой формы</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>☐</td>
+                <td><span class="st-pill st-warn">буква≠RAL</span></td>
+                <td><code>T8L-1</code></td>
+                <td><code>B8L-1</code></td>
+                <td>RAL 9005 → B, не T</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td><span class="st-pill st-ok">ок</span></td>
+                <td><code>G1-1</code></td>
+                <td><code>G1-1</code></td>
+                <td>—</td>
+                <td>234</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="ui-mock-actions">Показать на виде · Применить выбранные · Закрыть</p>
+      </div>
+
+      <div class="callout note-callout" style="margin-top: 16px;">
+        <h4>Что плагин не делает сам</h4>
+        <p>Не перезаписывает верные марки. Не решает за проектировщика, какая цифра конфигурации «правильная» для нового изделия — только предлагает свободный номер. Не пишет в марку имя типа Revit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="families">
+    <div class="section-inner">
+      <p class="section-kicker">Как устроена модель</p>
+      <h2>Семейство и тип</h2>
+      <p class="lead-section">Отдельное семейство на каждый типоразмер <strong>не нужно</strong>. Семейство — это <strong>форма изделия</strong>. Тип внутри него — размер, сторона, рёбра, цвет и марка.</p>
+
+      <div class="plane-diagram">
+        <table>
+          <thead>
+            <tr><th></th><th>Семейство</th><th>Тип</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Что это</td>
+              <td>Один паттерн листа: плоская, наклон, угол, подокон, радиус</td>
+              <td>Ш×В, L/R, раскладка рёбер, RAL, <code>FSD_Марка_Панель</code></td>
+            </tr>
+            <tr>
+              <td>Когда новое</td>
+              <td>Геометрия изделия другая и её нельзя задать параметрами того же семейства</td>
+              <td>То же изделие, другой габарит, рёбра или цвет</td>
+            </tr>
+            <tr>
+              <td>Пример</td>
+              <td>Поясная прямая ≠ угловая ≠ радиусная</td>
+              <td>В одной поясной: <code>G1-1</code> (1180×1780, одно ребро) и <code>G1-2</code> (те же борта, рёбра иначе)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout" style="margin-top: 16px;">
+        <h4>Что копировать в Revit</h4>
+        <p><strong>Новый тип</strong> (Duplicate type) — то же изделие, другой размер или рёбра. Например, в одном семействе «Алюминиевая кассета…» могут жить сотни типов.</p>
+        <p><strong>Новое семейство</strong> — только если лист гнётся иначе (угол вместо плоскости, радиус, другой набор бортов, который текущее семейство не описывает). Тогда левая часть марки будет другой (<code>G1</code> vs <code>G6</code>).</p>
+        <p>Борта и рёбра — параметры <strong>типа</strong>, не экземпляра. Иначе одинаковые кассеты разъедутся без смены типа, и марка перестанет быть уникальной.</p>
+      </div>
+    </div>
+  </section>
+
+  </div><!-- /.cmd-block-marks -->
+
+      </div><!-- /.doc-main -->
+    </div><!-- /.doc-layout -->
+  </div><!-- /.doc-shell -->
+
+  <footer>
+    <div class="wrap">
+      <p>RevitViewPlace · <a href="https://nordfox.ru/">NORDFOX</a> · <a href="index.html">Настройка</a> · <a href="kmd.html">КМД</a> · <a href="km.html">КМ</a></p>
+      <p class="footer-meta">Сайт: <a href="https://alexpror.github.io/revit_view_place_demo/km.html">alexpror.github.io/revit_view_place_demo/km.html</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,16 +1,17 @@
-## Видео (`video-config.js` + `video/*.mp4`)
+# RevitViewPlace — инструкция
 
-Как [solid-dxf-demo](https://github.com/AlexPror/solid-dxf-demo): сжатые mp4 в репозитории сайта, HTML5-плеер.
+**Сайт:** [https://alexpror.github.io/revit_view_place_demo/](https://alexpror.github.io/revit_view_place_demo/)
 
-| id | Тема | Файл | Статус |
-|----|------|------|--------|
-| `templates` | Шаблоны NF КМД … | — | закомментировано |
-| `planes` | Опорные плоскости | — | закомментировано |
-| `views` | Выпуск листов | `video/views.mp4` | на сайте |
-| `dimensions` | Цепочки размеров | `video/dimensions.mp4` | на сайте |
-| `orientation` | Ориентация | `video/orientation.mp4` | на сайте |
-| `km` | Размеры КМ | — | раздел на сайте, без ролика |
+- [Настройка](https://alexpror.github.io/revit_view_place_demo/) — установка и шаблоны проекта
+- [КМД](https://alexpror.github.io/revit_view_place_demo/kmd.html) — команды листов и видов
+- [КМ](https://alexpror.github.io/revit_view_place_demo/km.html) — кронштейны и кассеты
 
-Сжатие (ориентир &lt; 50 МБ/файл): `ffmpeg -i in.mp4 -vf scale=1280:-2 -c:v libx264 -crf 28 -preset medium -c:a aac -b:a 96k -movflags +faststart out.mp4`
+После push в `main` GitHub Actions публикует Pages (ветка `gh-pages`, 1–2 мин).
 
-Исходники можно оставить на Google Drive (`openUrl` — запасная ссылка).
+## Страницы
+
+| Файл | Тема |
+|------|------|
+| `index.html` | Настройка |
+| `kmd.html` | Команды КМД |
+| `km.html` | Команды КМ |
