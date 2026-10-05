@@ -4,7 +4,7 @@
 
 - [Настройка](https://alexpror.github.io/revit_view_place_demo/) — установка и шаблоны проекта
 - [КМД](https://alexpror.github.io/revit_view_place_demo/kmd.html) — команды листов и видов
-- [КМ](https://alexpror.github.io/revit_view_place_demo/km.html) — кронштейны и кассеты
+- [КМ](https://alexpror.github.io/revit_view_place_demo/km.html) — кронштейны, каретки и кассеты
 
 После push в `main` GitHub Actions публикует Pages (ветка `gh-pages`, 1–2 мин).
 
