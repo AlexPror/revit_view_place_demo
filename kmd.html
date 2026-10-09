@@ -75,6 +75,7 @@
           <a href="#analyze-views">Виды</a>
           <a href="#analyze-sheet">Лист</a>
           <a href="#analyze-project">Проект</a>
+          <a href="#export-pdf">Экспорт PDF</a>
         </nav>
       </aside>
       <div class="doc-main">
@@ -548,8 +549,8 @@
   <div class="cmd-block cmd-block-analyze" id="cmd-analyze">
     <header class="cmd-block-head">
       <p class="cmd-block-kicker">NORDFOX → Анализ</p>
-      <p class="cmd-block-title">Три команды анализа</p>
-      <p class="cmd-block-lead">Выгрузки в <code>Документы\NORDFOX\RevitViewPlace\exports</code>. Для проверки модели и эталонов, не для выпуска листов.</p>
+      <p class="cmd-block-title">Анализ и экспорт PDF</p>
+      <p class="cmd-block-lead">Выгрузки в <code>Документы\NORDFOX\RevitViewPlace\exports</code>. Анализ — для проверки модели; PDF — для выдачи листов.</p>
     </header>
     <section class="section" id="analyze-views">
       <div class="wrap">
@@ -581,6 +582,18 @@
         <ol class="steps">
           <li>Откройте проект.</li>
           <li><strong>NORDFOX → Анализ → Анализ проекта</strong>.</li>
+        </ol>
+      </div>
+    </section>
+    <section class="section" id="export-pdf">
+      <div class="wrap">
+        <p class="section-kicker">Анализ</p>
+        <h2>Экспорт PDF</h2>
+        <p class="lead-section">Листы проекта в PDF. Revit <strong>2021</strong> — через Microsoft Print to PDF (формат и ориентация с листа). Revit <strong>2022+</strong> — встроенный Export PDF. Папка по умолчанию — <code>exports</code> NORDFOX.</p>
+        <ol class="steps">
+          <li>Откройте проект с листами.</li>
+          <li><strong>NORDFOX → Анализ → Экспорт PDF</strong>.</li>
+          <li>Выберите листы и режим (по файлу на лист и/или альбом) → экспорт.</li>
         </ol>
       </div>
     </section>
