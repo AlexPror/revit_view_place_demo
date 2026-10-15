@@ -10,7 +10,7 @@
 <body class="page-kmd">
 
   <header class="site-header">
-    <div class="pilot-banner">Пилот · Revit 2021/2022 · команды панели КМД</div>
+    <div class="pilot-banner">Пилот · Revit 2021/2022 · v0.2.0 · КМД + оформление (знак, выноски на узлах)</div>
     <nav class="site-nav">
       <div class="wrap site-nav-inner">
         <a class="site-brand" href="index.html">RevitViewPlace</a>
@@ -39,7 +39,7 @@
     <div class="wrap">
       <p class="eyebrow">Лента NORDFOX · не путать с панелью <a href="km.html" style="color:#fff;opacity:.9">КМ</a></p>
       <h1>Команды КМД</h1>
-      <p class="lead">Справочник кнопок: листы, правка видов, знак ориентации, инфо о модуле, анализ. Установка и шаблоны проекта — на странице <a href="index.html" style="color:#fff;opacity:.9">Настройка</a>.</p>
+      <p class="lead">Справочник кнопок КМД: листы, правка видов, оформление (знак и <strong>выноски на узлах</strong>), модуль, анализ. Панель <strong>КМ</strong> — на странице <a href="km.html" style="color:#fff;opacity:.9">КМ</a>. Установка — <a href="index.html" style="color:#fff;opacity:.9">Настройка</a>.</p>
     </div>
   </section>
 
@@ -47,6 +47,9 @@
     <div class="wrap doc-layout">
       <aside class="doc-toc" aria-label="Команды КМД">
         <p class="doc-toc-title">Команды на ленте</p>
+        <nav class="doc-toc-nav">
+          <a href="#ribbon-map">Карта ленты</a>
+        </nav>
         <nav class="doc-toc-nav toc-cmd toc-cmd-sheets">
           <p class="toc-cmd-label"><a href="#cmd-sheets">Листы КМД</a></p>
           <a href="#sheets">Выпуск</a>
@@ -65,6 +68,7 @@
         <nav class="doc-toc-nav toc-cmd toc-cmd-spds">
           <p class="toc-cmd-label"><a href="#cmd-spds">Оформление</a></p>
           <a href="#spds">Знак ориентации</a>
+          <a href="#callouts">Выноски на узлах</a>
         </nav>
         <nav class="doc-toc-nav toc-cmd toc-cmd-module">
           <p class="toc-cmd-label"><a href="#cmd-module">Модуль</a></p>
@@ -77,8 +81,130 @@
           <a href="#analyze-project">Проект</a>
           <a href="#export-pdf">Экспорт PDF</a>
         </nav>
+        <p class="doc-toc-title">Ещё на ленте</p>
+        <nav class="doc-toc-nav">
+          <a href="km.html">КМ (5 кнопок)</a>
+        </nav>
       </aside>
       <div class="doc-main">
+
+  <section class="section section-alt" id="ribbon-map">
+    <div class="wrap">
+      <p class="section-kicker">Вся лента NORDFOX</p>
+      <h2>Карта кнопок</h2>
+      <p class="lead-section">Все команды полного пакета v0.2.0. Панель <strong>КМ</strong> разобрана на странице <a href="km.html">КМ</a>; остальное — на этой.</p>
+      <div class="plane-diagram">
+        <table>
+          <thead>
+            <tr><th>Панель</th><th>Кнопка</th><th>Зачем</th><th>Где описано</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Листы КМД</td>
+              <td>Листы КМД</td>
+              <td>Комплект листов модуля / панели / профилей</td>
+              <td><a href="#cmd-sheets">ниже</a></td>
+            </tr>
+            <tr>
+              <td rowspan="6">Правка видов</td>
+              <td>Ориентация видов</td>
+              <td>Поворот выбранного вида</td>
+              <td><a href="#orientation">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Вид по стороне</td>
+              <td>Новый разрез от клика у края</td>
+              <td><a href="#side">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Глубина разреза</td>
+              <td>Near/far clip, мм</td>
+              <td><a href="#depth">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Масштаб вида</td>
+              <td>Чертёжный 1:N + «М 1:N»</td>
+              <td><a href="#scale">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Скрыть детали</td>
+              <td>Закладные / икли / крепёж</td>
+              <td><a href="#details">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Цепочка размеров</td>
+              <td>Размерные цепи КМД</td>
+              <td><a href="#dimensions">ниже</a></td>
+            </tr>
+            <tr>
+              <td rowspan="5">КМ</td>
+              <td>Размеры КМ</td>
+              <td>Линия ∩ кронштейны / каретки</td>
+              <td><a href="km.html#dims">КМ</a></td>
+            </tr>
+            <tr>
+              <td>Полки КМ</td>
+              <td>Перекладка полок выбранной цепи</td>
+              <td><a href="km.html#shelves">КМ</a></td>
+            </tr>
+            <tr>
+              <td>Настройки размеров</td>
+              <td>Пресеты Create и полок</td>
+              <td><a href="km.html#presets">КМ</a></td>
+            </tr>
+            <tr>
+              <td>Марки кассет</td>
+              <td>Аудит / окраска / запись марок</td>
+              <td><a href="km.html#cmd-marks">КМ</a></td>
+            </tr>
+            <tr>
+              <td>Метки кронштейнов</td>
+              <td>Разнос уже стоящих меток длины</td>
+              <td><a href="km.html#tags">КМ</a></td>
+            </tr>
+            <tr>
+              <td rowspan="2">Оформление</td>
+              <td>Знак ориентации</td>
+              <td>Условный знак панели на листе</td>
+              <td><a href="#spds">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Выноски на узлах</td>
+              <td>Полки «Выноска» на листе узла из FSD</td>
+              <td><a href="#callouts">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Модуль</td>
+              <td>Инфо о модуле</td>
+              <td>Справка по выбранному экземпляру</td>
+              <td><a href="#module">ниже</a></td>
+            </tr>
+            <tr>
+              <td rowspan="4">Анализ</td>
+              <td>Анализ видов</td>
+              <td>CSV видов проекта</td>
+              <td><a href="#analyze-views">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Анализ листа</td>
+              <td>JSON/CSV листа + выноски узлов</td>
+              <td><a href="#analyze-sheet">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Анализ проекта</td>
+              <td>Инвентарь семейств, КМ, выносок</td>
+              <td><a href="#analyze-project">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Экспорт PDF</td>
+              <td>Листы в PDF</td>
+              <td><a href="#export-pdf">ниже</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
 
   <div class="cmd-block cmd-block-sheets" id="cmd-sheets">
     <header class="cmd-block-head">
@@ -510,19 +636,42 @@
 
   <div class="cmd-block cmd-block-spds" id="cmd-spds">
     <header class="cmd-block-head">
-      <p class="cmd-block-kicker">NORDFOX → Оформление → Знак ориентации</p>
-      <p class="cmd-block-title">Команда «Знак ориентации»</p>
-      <p class="cmd-block-lead">Условный знак панели (круг, перекрестье, три планки) в левом верхнем углу листа. На листе панели ставится и автоматически при выпуске.</p>
+      <p class="cmd-block-kicker">NORDFOX → Оформление</p>
+      <p class="cmd-block-title">Панель «Оформление»</p>
+      <p class="cmd-block-lead">Две кнопки: знак ориентации панели на листе и выноски на узлах (полки с текстом из FSD).</p>
     </header>
     <section class="section" id="spds">
       <div class="wrap">
         <p class="section-kicker">Оформление</p>
         <h2>Знак ориентации</h2>
-        <p class="lead-section">Откройте лист (или выберите viewport на листе). Команда ставит знак или обновляет уже существующий. Replace видов листа модуля и профилей этот знак не плодит.</p>
+        <p class="lead-section">Условный знак панели (круг, перекрестье, три планки) в левом верхнем углу листа. На листе панели ставится и автоматически при выпуске. Replace видов листа модуля и профилей этот знак не плодит.</p>
         <ol class="steps">
           <li>Откройте лист панели (или другой лист, куда нужен знак).</li>
           <li><strong>NORDFOX → Оформление → Знак ориентации</strong>.</li>
         </ol>
+      </div>
+    </section>
+    <section class="section section-alt" id="callouts">
+      <div class="wrap">
+        <p class="section-kicker">Оформление · иконка полки с подписями</p>
+        <h2>Выноски на узлах</h2>
+        <p class="lead-section">
+          Ставит семейство <strong>«Выноска»</strong> на <strong>лист</strong> (не на разрез): острие у детали активного вида узла, текст полки из
+          <code>FSD_Артикул</code> / <code>FSD_Примечание</code>. Перед постановкой пустые FSD на типах заполняются из встроенного каталога 1С при уверенном совпадении имени.
+          Не путать со <strong>Знаком ориентации</strong> и с семейством «Выноска. узлы» (номер узла на схеме).
+        </p>
+        <ol class="steps">
+          <li>Откройте лист с узлом. <strong>Двойной клик по viewport</strong> — активируйте вид узла (как к размерам / маркам).</li>
+          <li><strong>NORDFOX → Оформление → Выноски на узлах</strong>.</li>
+          <li>Смотрите отчёт: сколько FSD заполнено из каталога, сколько полок поставлено, что без параметров или без матча.</li>
+          <li>При необходимости подвиньте полки руками; ширину и сторону полки (<code>20</code>/<code>30</code>/<code>40</code>, <code>Рзм_кратность</code>) подправьте в свойствах выноски.</li>
+        </ol>
+        <div class="callout">
+          <h4>Что важно</h4>
+          <p><strong>Область</strong> — только активный вид (вложенные детали тоже; хосты-сборки пропускаются).</p>
+          <p><strong>Текст</strong> — коротко одна строка; иначе имя над полкой, артикул под ней. Одна полка на артикул/текст — без дублей рядом и поверх уже стоящих ручных.</p>
+          <p><strong>Без FSD-параметров</strong> на типе плагин полку не ставит — сначала нужны <code>FSD_Артикул</code> / <code>FSD_Примечание</code> в семействе.</p>
+        </div>
       </div>
     </section>
   </div>
@@ -567,7 +716,7 @@
       <div class="wrap">
         <p class="section-kicker">Анализ</p>
         <h2>Анализ листа</h2>
-        <p class="lead-section">Снимок активного листа: viewport’ы, размеры, спецификации, тексты, марки. Пишет <code>sheet_latest.json</code> и <code>sheetdims_latest.csv</code>.</p>
+        <p class="lead-section">Снимок активного листа: viewport’ы, размеры, спецификации, тексты, марки и выноски узлов. Пишет <code>sheet_latest.json</code>, <code>sheetdims_latest.csv</code> и <code>sheetnodes_latest.csv</code>.</p>
         <ol class="steps">
           <li>Откройте лист или выберите viewport на листе.</li>
           <li><strong>NORDFOX → Анализ → Анализ листа</strong>.</li>
@@ -578,7 +727,7 @@
       <div class="wrap">
         <p class="section-kicker">Анализ</p>
         <h2>Анализ проекта</h2>
-        <p class="lead-section">Инвентарь top-level семейств, покрытие сценариями листов и параметры КМ (кассета / кронштейн). CSV: типы модулей и <code>km_part_types_latest.csv</code> / <code>km_part_params_latest.csv</code> (в том числе <code>FSD_Марка_Панель</code> filled/empty).</p>
+        <p class="lead-section">Инвентарь top-level семейств, покрытие сценариями листов, параметры КМ (кассета / кронштейн), метки IndependentTag и выноски узлов (<code>km_node_*</code>). CSV: типы модулей, <code>km_part_*</code>, <code>km_tag_*</code>, <code>km_node_*</code> (в том числе <code>FSD_Марка_Панель</code> filled/empty).</p>
         <ol class="steps">
           <li>Откройте проект.</li>
           <li><strong>NORDFOX → Анализ → Анализ проекта</strong>.</li>
