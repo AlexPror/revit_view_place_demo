@@ -39,7 +39,7 @@
     <div class="wrap">
       <p class="eyebrow">Лента NORDFOX → панель <strong>КМ</strong> · синие иконки</p>
       <h1>КМ: кронштейны, каретки и кассеты</h1>
-      <p class="lead">Размеры по линии, перекладка полок, пресеты, разнос меток на монтажке и маркировка кассет (фасад и 3D). Установка — <a href="index.html" style="color:#fff;opacity:.9">Настройка</a>. Листы КМД — <a href="kmd.html" style="color:#fff;opacity:.9">КМД</a>.</p>
+      <p class="lead">Пять кнопок панели <strong>КМ</strong>: размеры, полки, настройки, марки кассет, метки кронштейнов. Остальная лента — <a href="kmd.html#ribbon-map" style="color:#fff;opacity:.9">карта на КМД</a>. Установка — <a href="index.html" style="color:#fff;opacity:.9">Настройка</a>.</p>
     </div>
   </section>
 
@@ -64,8 +64,14 @@
           <a href="#mark">Марка на фасаде</a>
           <a href="#colors">Карта цветов</a>
           <a href="#unique">Уникальность</a>
+          <a href="#workflow">Кто что делает</a>
           <a href="#plugin">Окно плагина</a>
           <a href="#families">Семейство и тип</a>
+        </nav>
+        <p class="doc-toc-title">Другие панели</p>
+        <nav class="doc-toc-nav">
+          <a href="kmd.html#ribbon-map">Карта всей ленты</a>
+          <a href="kmd.html#callouts">Выноски на узлах</a>
         </nav>
       </aside>
       <div class="doc-main">
@@ -238,7 +244,7 @@
     <header class="cmd-block-head">
       <p class="cmd-block-kicker">NORDFOX → КМ</p>
       <p class="cmd-block-title">Команда «Марки кассет»</p>
-      <p class="cmd-block-lead">Другая кнопка на той же панели. Формат марки, цвета, уникальность и окно плагина.</p>
+      <p class="cmd-block-lead">Кнопка «Марки кассет» и внутри неё «Стиль марок…». Формат марки, цвета, роли проектировщик/руководитель, окно плагина.</p>
     </header>
 
   <section class="section section-alt" id="mark">
@@ -446,7 +452,8 @@
 
       <ol class="steps">
         <li>Откройте фасад, разрез, <strong>3D</strong> или лист с фасадом. <strong>NORDFOX → КМ → Марки кассет</strong>.</li>
-        <li>Плагин сравнивает <code>FSD_Марка_Панель</code> с правилами и красит кассеты на <strong>активном</strong> виде (фасад или 3D): красный / оранжевый / жёлтый / цвет RAL.</li>
+        <li>При первом проекте или смене палитры RAL: <strong>Стиль марок…</strong> — таблица RAL→буква, сохранить в этот <code>.rvt</code>.</li>
+        <li>Плагин сравнивает <code>FSD_Марка_Панель</code> со стилем и красит кассеты на <strong>активном</strong> виде: красный / оранжевый / жёлтый / цвет RAL.</li>
         <li>В списке — типы. Пустые и ошибки отмечены; колонка <strong>Место</strong> — отметка, этаж, номер в ряду (на фасаде).</li>
         <li>Проверьте цифру конфигурации. При необходимости поправьте новую марку.</li>
         <li><strong>Применить выбранные</strong> — запись на тип (все экземпляры в проекте). «Окрасить временно» — снова красит текущий вид.</li>
