@@ -433,6 +433,75 @@ strong { font-weight: 500; }
   color: var(--ink);
 }
 
+.flow-board {
+  margin: 24px 0 8px;
+  padding: 20px 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+.section-alt .flow-board { background: var(--bg); }
+.flow-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px 8px;
+}
+.flow-row-center { margin-top: 4px; }
+.flow-card {
+  flex: 1 1 180px;
+  max-width: 260px;
+  padding: 14px 16px;
+  background: #f7f9fc;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--nf-blue);
+}
+.flow-card-lead {
+  max-width: 520px;
+  border-left-color: #c45c26;
+  background: #fff8f3;
+}
+.flow-role {
+  margin: 0 0 4px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--nf-blue);
+  font-weight: 600;
+}
+.flow-card-lead .flow-role { color: #c45c26; }
+.flow-card h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.flow-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+.flow-arrow {
+  align-self: center;
+  font-size: 1.35rem;
+  color: var(--nf-blue);
+  font-weight: 600;
+  padding: 0 2px;
+}
+.flow-down {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #c45c26;
+  font-weight: 600;
+  margin: 8px 0 4px;
+  line-height: 1;
+}
+@media (max-width: 720px) {
+  .flow-arrow { display: none; }
+  .flow-card { max-width: none; }
+}
+
 .steps {
   margin: 0;
   padding-left: 1.35rem;
