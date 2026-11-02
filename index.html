@@ -79,7 +79,7 @@
           <a href="kmd.html#ribbon-map">Карта всей ленты</a>
           <a href="kmd.html">КМД</a>
           <a href="km.html">КМ</a>
-          <a href="kmd.html#callouts">Выноски на узлах</a>
+          <a href="kmd.html#cmd-callouts">Выноски на узлах</a>
         </nav>
       </aside>
       <div class="doc-main">
@@ -150,19 +150,19 @@
         <li><strong>Закройте Revit</strong> полностью.</li>
         <li>Распакуйте ZIP нужной версии (<code>RevitViewPlace_2021</code> или <code>RevitViewPlace_2022</code>).</li>
         <li>
-          Скопируйте оба файла в одну папку:
+          Скопируйте всё содержимое ZIP (файлы и папку <code>Resources</code>) в одну папку:
           <ul>
             <li>Revit 2021 — <code>C:\ProgramData\Autodesk\Revit\Addins\2021\</code></li>
             <li>Revit 2022 — <code>C:\ProgramData\Autodesk\Revit\Addins\2022\</code></li>
           </ul>
-          Файлы: <code>RevitViewPlace.dll</code> и <code>RevitViewPlace.addin</code>.
+          Файлы: <code>RevitViewPlace.dll</code>, <code>PdfSharp.dll</code> (экспорт PDF), <code>RevitViewPlace.addin</code>, <code>VERSION.txt</code> и папка <code>Resources\</code> (иконки ленты и каталог 1С для выносок).
         </li>
         <li>
           Быстрый путь к папке: Win+R → вставьте
           <code>%ProgramData%\Autodesk\Revit\Addins\2022</code>
           (или <code>…\2021</code>) → Enter.
         </li>
-        <li>Запустите Revit. На ленте вкладка <strong>NORDFOX</strong>: Листы КМД, Правка видов, <strong>КМ</strong>, Оформление (знак + выноски на узлах), Модуль, Анализ. Полный список кнопок: <a href="kmd.html#ribbon-map">карта ленты</a>. Справочники: <a href="kmd.html">КМД</a>, <a href="km.html">КМ</a>.</li>
+        <li>Запустите Revit. На ленте вкладка <strong>NORDFOX</strong>: Листы КМД, Правка видов, <strong>КМ</strong>, Оформление (знак + <a href="kmd.html#cmd-callouts">выноски на узлах</a>), Модуль, Анализ. Полный список кнопок: <a href="kmd.html#ribbon-map">карта ленты</a>. Справочники: <a href="kmd.html">КМД</a>, <a href="km.html">КМ</a>.</li>
       </ol>
 
       <div class="plane-diagram" style="margin-top: 28px;">
@@ -175,7 +175,7 @@
             <tr><td>Версия пакета не совпадает с Revit</td><td>Возьмите ZIP 2021 или 2022 под вашу версию</td></tr>
             <tr><td>Revit не перезапускали</td><td>Закройте все окна Revit и откройте снова</td></tr>
             <tr><td>Файл с сети или флешки заблокирован</td><td>ПКМ по <code>RevitViewPlace.dll</code> → Свойства → Разблокировать → OK</td></tr>
-            <tr><td>Нет прав на ProgramData</td><td>Скопируйте те же два файла в <code>%AppData%\Autodesk\Revit\Addins\2022\</code> (или 2021)</td></tr>
+            <tr><td>Нет прав на ProgramData</td><td>Скопируйте то же содержимое ZIP в <code>%AppData%\Autodesk\Revit\Addins\2022\</code> (или 2021)</td></tr>
           </tbody>
         </table>
       </div>

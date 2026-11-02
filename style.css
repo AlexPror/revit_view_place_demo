@@ -217,6 +217,7 @@ strong { font-weight: 500; }
 .toc-cmd-chain,
 .toc-cmd-edit { border-left-color: var(--chain); }
 .toc-cmd-orient,
+.toc-cmd-callouts,
 .toc-cmd-spds { border-left-color: var(--orient); }
 .toc-cmd-module { border-left-color: var(--nf-slate); }
 .toc-cmd-analyze { border-left-color: var(--muted); }
@@ -239,6 +240,7 @@ strong { font-weight: 500; }
 .toc-cmd-chain .toc-cmd-label a,
 .toc-cmd-edit .toc-cmd-label a { color: var(--chain); }
 .toc-cmd-orient .toc-cmd-label a,
+.toc-cmd-callouts .toc-cmd-label a,
 .toc-cmd-spds .toc-cmd-label a { color: var(--orient); }
 .toc-cmd-module .toc-cmd-label a { color: var(--nf-slate); }
 .toc-cmd-analyze .toc-cmd-label a { color: var(--ink-2); }
@@ -263,6 +265,7 @@ strong { font-weight: 500; }
   border-left: 6px solid var(--chain);
 }
 .cmd-block-orient,
+.cmd-block-callouts,
 .cmd-block-spds {
   background: var(--orient-bg-soft);
   border-left: 6px solid var(--orient);
@@ -298,6 +301,7 @@ strong { font-weight: 500; }
 .cmd-block-chain .cmd-block-title,
 .cmd-block-edit .cmd-block-title { color: var(--chain); }
 .cmd-block-orient .cmd-block-title,
+.cmd-block-callouts .cmd-block-title,
 .cmd-block-spds .cmd-block-title { color: var(--orient); }
 .cmd-block-module .cmd-block-title { color: var(--nf-slate); }
 .cmd-block-analyze .cmd-block-title { color: var(--ink-2); }
