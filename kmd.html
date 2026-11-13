@@ -10,7 +10,7 @@
 <body class="page-kmd">
 
   <header class="site-header">
-    <div class="pilot-banner">Пилот · Revit 2021/2022 · v0.3.0 · КМД + оформление (знак) + выноски на узлах</div>
+    <div class="pilot-banner">Пилот · Revit 2021/2022 · v0.3.1 (13.11.2026) · КМД + оформление + параметры спецификации</div>
     <nav class="site-nav">
       <div class="wrap site-nav-inner">
         <a class="site-brand" href="index.html">RevitViewPlace</a>
@@ -90,6 +90,7 @@
           <a href="#analyze-views">Виды</a>
           <a href="#analyze-sheet">Лист</a>
           <a href="#analyze-project">Проект</a>
+          <a href="#spec-params">Параметры спецификации</a>
           <a href="#export-pdf">Экспорт PDF</a>
         </nav>
         <p class="doc-toc-title">Ещё на ленте</p>
@@ -103,7 +104,7 @@
     <div class="wrap">
       <p class="section-kicker">Вся лента NORDFOX</p>
       <h2>Карта кнопок</h2>
-      <p class="lead-section">Все команды полного пакета v0.3.0. Панель <strong>КМ</strong> разобрана на странице <a href="km.html">КМ</a>; остальное — на этой.</p>
+      <p class="lead-section">Все команды полного пакета v0.3.1. Панель <strong>КМ</strong> разобрана на странице <a href="km.html">КМ</a>; остальное — на этой.</p>
       <div class="plane-diagram">
         <table>
           <thead>
@@ -196,7 +197,7 @@
               <td><a href="#module">ниже</a></td>
             </tr>
             <tr>
-              <td rowspan="4">Анализ</td>
+              <td rowspan="5">Анализ</td>
               <td>Анализ видов</td>
               <td>CSV видов проекта</td>
               <td><a href="#analyze-views">ниже</a></td>
@@ -210,6 +211,11 @@
               <td>Анализ проекта</td>
               <td>Инвентарь семейств, КМ, выносок</td>
               <td><a href="#analyze-project">ниже</a></td>
+            </tr>
+            <tr>
+              <td>Параметры спецификации</td>
+              <td>Коэф. запаса и type-параметры по типам</td>
+              <td><a href="#spec-params">ниже</a></td>
             </tr>
             <tr>
               <td>Экспорт PDF</td>
@@ -944,7 +950,7 @@
     <header class="cmd-block-head">
       <p class="cmd-block-kicker">NORDFOX → Анализ</p>
       <p class="cmd-block-title">Анализ и экспорт PDF</p>
-      <p class="cmd-block-lead">Выгрузки в <code>Документы\NORDFOX\RevitViewPlace\exports</code>. Анализ — для проверки модели; PDF — для выдачи листов.</p>
+      <p class="cmd-block-lead">Выгрузки в <code>Документы\NORDFOX\RevitViewPlace\exports</code>. Анализ — для проверки модели; параметры спецификации — правка К.з.; PDF — для выдачи листов.</p>
     </header>
     <section class="section" id="analyze-views">
       <div class="wrap">
@@ -977,6 +983,23 @@
           <li>Откройте проект.</li>
           <li><strong>NORDFOX → Анализ → Анализ проекта</strong>.</li>
         </ol>
+      </div>
+    </section>
+    <section class="section" id="spec-params">
+      <div class="wrap">
+        <p class="section-kicker">Анализ</p>
+        <h2>Параметры спецификации</h2>
+        <p class="lead-section">Запись коэффициентов запаса и других формульных type-параметров по типам семейства. После Apply спека должна показать введённое число и пересчитать зависимые поля.</p>
+        <ol class="steps">
+          <li>Откройте проект (удобно держать открытой нужную спецификацию НВФ).</li>
+          <li><strong>NORDFOX → Анализ → Параметры спецификации</strong>.</li>
+          <li>Пресет: коэффициент запаса / группа моделей / все RO type.</li>
+          <li>Отметьте типы, введите значение → <strong>Применить</strong>.</li>
+        </ol>
+        <div class="callout" style="margin-top: 16px;">
+          <h4>Дубликаты типов и пустая клетка К.з.</h4>
+          <p>Для <strong>корректного отображения</strong> значения в спецификации проследите, чтобы в семействе <strong>не было дубликатов типов</strong>: два типа с одним <code>FSD_Артикул</code> (например «Т20» и «T-профиль Т20») или два пункта с одинаковым именем в списке типов. Иначе Revit схлопывает строку и клетка коэффициента остаётся пустой при разных числах. Канон офиса — <strong>один тип на артикул</strong>; лишний дубль удалите и переназначьте экземпляры. Разные типы с разными артикулами (Т20 и Т22) — норма: им можно задать разные коэффициенты.</p>
+        </div>
       </div>
     </section>
     <section class="section" id="export-pdf">
