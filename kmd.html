@@ -1006,12 +1006,21 @@
       <div class="wrap">
         <p class="section-kicker">Анализ</p>
         <h2>Экспорт PDF</h2>
-        <p class="lead-section">Листы проекта в PDF. Revit <strong>2021</strong> — через Microsoft Print to PDF (формат и ориентация с листа). Revit <strong>2022+</strong> — встроенный Export PDF. Папка по умолчанию — <code>exports</code> NORDFOX.</p>
+        <p class="lead-section">Листы проекта в PDF. Revit <strong>2021</strong> — через PDF-принтер Windows (формат и ориентация с листа). Revit <strong>2022+</strong> — встроенный Export PDF (принтер не выбирается). Папка по умолчанию — <code>exports</code> NORDFOX.</p>
         <ol class="steps">
           <li>Откройте проект с листами.</li>
           <li><strong>NORDFOX → Анализ → Экспорт PDF</strong>.</li>
           <li>Выберите листы и режим (по файлу на лист и/или альбом) → экспорт.</li>
         </ol>
+        <div class="callout" style="margin-top: 16px;">
+          <h4>PDF-принтеры (только Revit 2021)</h4>
+          <p>Плагин берёт <strong>все PDF-принтеры</strong>, установленные в Windows (например Microsoft Print to PDF, PDF24 и др.). Жёсткого лимита «сколько штук» нет — в список попадают все подходящие; XPS и обычные бумажные принтеры не показываются.</p>
+          <ul>
+            <li><strong>Один</strong> PDF-принтер — используется сразу, список не нужен.</li>
+            <li><strong>Несколько</strong> — в диалоге выпадающий список; на пакет выбирается <strong>один</strong> принтер (последний выбор запоминается).</li>
+            <li><strong>Ни одного</strong> — экспорт не стартует: установите «Microsoft Print to PDF» или другой PDF-драйвер.</li>
+          </ul>
+        </div>
       </div>
     </section>
   </div>
